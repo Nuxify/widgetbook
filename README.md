@@ -1,17 +1,17 @@
 # nuxify_widgetbook
 
 # Buttons
-- Action Button
-- Outlined Action Button
-- Icon Button
-- Button Row (Button Group)
-- Text Button
-- Switch Button
-- Checkbox (with text on left/right)
-- Radio Row
+- Action Button # Deprecated in favor of using built-in `FilledButton` Widget
+- Outlined Action Button  # Deprecated in favor of using built-in `OutlinedButton` Widget
+- Icon Button  # Deprecated in favor of using built-in `IconButton.filled` Widget
+- Button Row (Button Group) # Deprecated in favor of using built-in `OverflowBar` Widget
+- Text Button  # Deprecated in favor of using built-in `TextButton` Widget
+- Switch Button  # Deprecated in favor of using built-in `Switch` Widget
+- Checkbox  # Deprecated in favor of using built-in `Checkbox` Widget
+- Radio Row  # Deprecated in favor of using built-in `Radio` Widget
 
 # Indicators
-- Line Step Indicator
+- Horizontal Step Indicator
 - Currency Display
 - Chips (Closable x button floating on right)
 - Chip Selection

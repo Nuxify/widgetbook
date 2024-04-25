@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/buttons/action_button.dart';
+import 'package:nuxify_widgetbook/indicators/horizontal_step_indicator.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,18 +10,15 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SafeArea(
           child: Column(
             children: [
-              SizedBox(
-                width: double.infinity,
-                child: ActionButton(
-                  onPressed: () {},
-                  child: Text('Submit'),
-                ),
+              HorizontalStepIndicator(
+                length: 4,
+                currentStep: 3,
               ),
             ],
           ),
