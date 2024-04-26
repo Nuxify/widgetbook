@@ -5,12 +5,12 @@
 
  - [x] **Action Button:** `FilledButton()`
  - [x] **Outlined Action Button:** `OutlinedButton()`
- - [x] **Icon Button:** `IconButton.filled`
+ - [x] **Icon Button:** `IconButton.filled()`
 
 # Indicators
 
- - [x] **Horizontal Step Indicator:**  `HorizontalStepIndicator()`
- - [ ] Currency Display
+ - [x] **Horizontal Step Indicator:**  `HorizontalStepper()`
+ - [x] **Chip Indicator:** `ChipIndicator()`
  - [ ] Chips (Closable x button floating on right)
  - [ ] Chip Selection
  - [ ] Page View Header (Tab Header)

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HorizontalStepIndicator extends StatelessWidget {
+class HorizontalStepper extends StatelessWidget {
   /// Builds a row of horizontal step indicators.
   ///
   /// [length] The total number of steps in the row.
@@ -16,7 +16,7 @@ class HorizontalStepIndicator extends StatelessWidget {
   /// [indicatorThickness] The thickness of each step indicator. Defaults to 2.
   ///
   /// [borderRadius] The border radius of each step indicator. Defaults to 0.
-  const HorizontalStepIndicator({
+  const HorizontalStepper({
     required this.length,
     required this.currentStep,
     this.activeColor,

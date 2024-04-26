@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/indicators/horizontal_step_indicator.dart';
+import 'package:nuxify_widgetbook/indicators/chip.dart';
 
 void main() {
   runApp(const MainApp());
@@ -16,10 +16,9 @@ class MainApp extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-              HorizontalStepIndicator(
-                length: 4,
-                currentStep: 3,
-              ),
+              ChipIndicator(
+                child: Text('hello'),
+              )
             ],
           ),
         ),
