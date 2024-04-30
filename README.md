@@ -11,8 +11,7 @@
 
  - [x] **Horizontal Step Indicator:**  `HorizontalStepper()`
  - [x] **Chip Indicator:** `ChipIndicator()`
- - [ ] Chips (Closable x button floating on right)
- - [ ] Chip Selection
+ - [ ] **Chip Selection:** `ChipsSelection()`
  - [ ] Page View Header (Tab Header)
  - [ ] Empty View (Icon on top, text on bottom, centered)
  - [ ] Avatar (if no image passed, display initials)

@@ -27,7 +27,8 @@ class ChipIndicator extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(20),
-      child: Container(
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 100),
         decoration: BoxDecoration(
           color: backgroundColor ??
               Theme.of(context).primaryColor.withOpacity(0.1),
