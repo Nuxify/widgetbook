@@ -13,12 +13,12 @@
  - [x] **Chip Indicator:** `ChipIndicator()`
  - [x] **Chip Selection:** `ChipsSelection()`
  - [x] **Empty View (Icon on top, text on bottom, centered):** `EmptyViewPlaceholder()`
- - [ ] Avatar (if no image passed, display initials)
+ - [x] **Avatar (if no image passed, display initials):** `CircleAvatar()`
 
 
 # Textfields / Input
 
- - [ ] Filled TextField
+ - [x] **Filled TextField:** `FilledTextField()`
  - [ ] Outlined TextField
  - [ ] Dropdown
  - [ ] Multi select dropdowns
