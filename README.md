@@ -11,12 +11,10 @@
 
  - [x] **Horizontal Step Indicator:**  `HorizontalStepper()`
  - [x] **Chip Indicator:** `ChipIndicator()`
- - [ ] **Chip Selection:** `ChipsSelection()`
- - [ ] Page View Header (Tab Header)
- - [ ] Empty View (Icon on top, text on bottom, centered)
+ - [x] **Chip Selection:** `ChipsSelection()`
+ - [x] **Empty View (Icon on top, text on bottom, centered):** `EmptyViewPlaceholder()`
  - [ ] Avatar (if no image passed, display initials)
 
-  
 
 # Textfields / Input
 
