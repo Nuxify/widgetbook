@@ -5,27 +5,35 @@ class FilledTextField extends StatelessWidget {
   ///
   /// Takes optional parameters that define the appearance and behavior of the text field.
   ///
-  /// [controller] TextEditingController of the text field
+  /// [controller] A TextEditingController that allows you to control the text being edited.
   ///
-  /// [fillColor] The fill color of the text field. Defaults to black with 0.05 opacity.
+  /// [fillColor] The color to fill the text field with. If not provided, it defaults to a semi-transparent black color.
   ///
-  /// [borderRadius] The radius of the text field's border. Defaults to 30.
+  /// [borderRadius] The radius of the border corners. Defaults to 30.
   ///
-  /// [contentPadding] The padding inside the text field's content
+  /// [contentPadding] The padding around the text field content. Defaults to EdgeInsets.symmetric(vertical 10, horizontal 20).
   ///
-  /// [validator] A function to validate the text field's input.
+  /// [validator] A function that takes the input text and returns an error string to display if the input is invalid.
   ///
-  /// [hintText] Hint text to show inside the textfield.
+  /// [hintText] The text to display when the text field is empty.
   ///
-  /// [hintStyle] Style of the hintText
+  /// [hintStyle] The style to apply to the hint text.
   ///
-  /// [labelText] Floating label text
+  /// [labelStyle] The style to apply to the label text.
   ///
-  /// [labelStyle] labelText style
+  /// [labelText] The text to display as the label.
   ///
-  /// [textStyle] TextStyle of the textfield itself
+  /// [textStyle] The style to apply to the input text.
   ///
-  /// [isDense] a boolean that determines whether the text field is dense or not.
+  /// [isDense] Whether the text field is dense, or not. Defaults to false.
+  ///
+  /// [obscureText] Whether to obscure the text being entered. Defaults to false.
+  ///
+  /// [floatingLabelBehavior] The behavior of the label when the text field is not empty. Defaults to FloatingLabelBehavior.always.
+  ///
+  /// [suffix] A widget to display after the text field.
+  ///
+  /// [prefix] A widget to display before the text field.
   const FilledTextField({
     this.controller,
     this.fillColor,

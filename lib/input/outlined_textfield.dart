@@ -5,25 +5,40 @@ class OutlinedTextField extends StatelessWidget {
   ///
   /// Takes optional parameters that define the appearance and behavior of the text field.
   ///
-  /// [controller] TextEditingController of the text field
+  /// [borderRadius] The radius of the border's corners.
   ///
-  /// [borderRadius] The radius of the text field's border. Defaults to 30.
+  /// [contentPadding] The padding around the text field.
   ///
-  /// [contentPadding] The padding inside the text field's content
+  /// [controller] The text editing controller for the text field.
   ///
-  /// [validator] A function to validate the text field's input.
+  /// [validator] A function that validates the text input.
   ///
-  /// [hintText] Hint text to show inside the textfield.
+  /// [focusedBorderColor] The color of the border when the text field is focused.
   ///
-  /// [hintStyle] Style of the hintText
+  /// [borderColor] The color of the border.
   ///
-  /// [labelText] Floating label text
+  /// [errorBorderColor] The color of the border when there is an error.
   ///
-  /// [labelStyle] labelText style
+  /// [hintText] The text to display when the text field is empty.
   ///
-  /// [textStyle] TextStyle of the textfield itself
+  /// [hintStyle] The style of the hint text.
   ///
-  /// [isDense] a boolean that determines whether the text field is dense or not.
+  /// [labelText] The text to display as the label.
+  ///
+  /// [labelStyle] The style of the label text.
+  ///
+  /// [textStyle] The style of the input text.
+  ///
+  /// [isDense] Whether the text field is dense.
+  ///
+  /// [obscureText] Whether to obscure the input text.
+  ///
+  /// [floatingLabelBehavior] The behavior of the floating label.
+  ///
+  /// [prefix] A widget to display before the text field.
+  ///
+  /// [suffix] A widget to display after the text field.
+  ///
   const OutlinedTextField({
     this.controller,
     this.borderRadius = 30,
