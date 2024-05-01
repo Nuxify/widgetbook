@@ -19,7 +19,7 @@
 # Textfields / Input
 
  - [x] **Filled TextField:** `FilledTextField()`
- - [ ] Outlined TextField
+ - [x] **Outlined TextField:** `OutlinedTextField()`
  - [ ] Dropdown
  - [ ] Multi select dropdowns
  - [ ] Pincode Texfield

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-class FilledTextField extends StatelessWidget {
-  /// Creates a text field with a filled appearance.
+class OutlinedTextField extends StatelessWidget {
+  /// Creates a text field with an outlined appearance.
   ///
   /// Takes optional parameters that define the appearance and behavior of the text field.
   ///
   /// [controller] TextEditingController of the text field
-  ///
-  /// [fillColor] The fill color of the text field. Defaults to black with 0.05 opacity.
   ///
   /// [borderRadius] The radius of the text field's border. Defaults to 30.
   ///
@@ -26,15 +24,17 @@ class FilledTextField extends StatelessWidget {
   /// [textStyle] TextStyle of the textfield itself
   ///
   /// [isDense] a boolean that determines whether the text field is dense or not.
-  const FilledTextField({
+  const OutlinedTextField({
     this.controller,
-    this.fillColor,
     this.borderRadius = 30,
     this.contentPadding = const EdgeInsets.symmetric(
       vertical: 10,
       horizontal: 20,
     ),
     this.validator,
+    this.focusedBorderColor = Colors.black,
+    this.borderColor = Colors.black26,
+    this.errorBorderColor = Colors.redAccent,
     this.hintText,
     this.hintStyle,
     this.labelStyle,
@@ -43,12 +43,14 @@ class FilledTextField extends StatelessWidget {
     this.isDense = false,
     this.obscureText = false,
     this.floatingLabelBehavior = FloatingLabelBehavior.always,
-    this.suffix,
     this.prefix,
+    this.suffix,
     super.key,
   });
-  final Color? fillColor;
-  final Color errorBorderColor = Colors.redAccent;
+
+  final Color borderColor;
+  final Color focusedBorderColor;
+  final Color errorBorderColor;
   final double borderRadius;
   final EdgeInsetsGeometry contentPadding;
   final TextEditingController? controller;
@@ -79,12 +81,18 @@ class FilledTextField extends StatelessWidget {
         labelText: labelText,
         labelStyle: labelStyle,
         floatingLabelBehavior: floatingLabelBehavior,
-        filled: true,
         isDense: isDense,
-        fillColor: fillColor ?? Colors.black.withOpacity(0.05),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: borderColor),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+          borderSide: BorderSide(color: borderColor),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+          borderSide: BorderSide(color: focusedBorderColor),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
