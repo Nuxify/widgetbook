@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^2.0.10+1
+  mobile_scanner: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -18,3 +20,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/rectangle.svg

@@ -22,7 +22,6 @@
  - [x] **Outlined TextField:** `OutlinedTextField()`
  - [x] **Dropdown:** `DropdownMenu()`
  - [x] **Pincode Texfield:** `PincodeView()`
- - [ ] File Picker
  - [ ] QR Reader (rounded squares on side)
  
 # Views
