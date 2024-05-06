@@ -4,7 +4,7 @@ class PincodeView extends StatefulWidget {
   const PincodeView({
     required this.length,
     required this.onComplete,
-    this.keypadNumberColor = const Color(0xFF161D4B),
+    this.keypadTextStyle,
     this.indicatorColor = const Color(0xFF161D4B),
     this.indicatorInactiveColor = const Color(0xFFEDEDED),
     this.label,
@@ -14,7 +14,7 @@ class PincodeView extends StatefulWidget {
   final Widget? logo;
   final Widget? label;
   final int length;
-  final Color keypadNumberColor;
+  final TextStyle? keypadTextStyle;
   final Color indicatorColor;
   final Color indicatorInactiveColor;
   final void Function(String value) onComplete;
@@ -55,7 +55,7 @@ class _PincodeViewState extends State<PincodeView> {
             ),
           ),
           _Keypad(
-            keypadNumberColor: widget.keypadNumberColor,
+            textStyle: widget.keypadTextStyle,
             input: (String value) {
               if (pincode.length < widget.length) {
                 setState(() => pincode += value);
@@ -115,11 +115,11 @@ class _Keypad extends StatelessWidget {
   const _Keypad({
     required this.input,
     required this.backspace,
-    required this.keypadNumberColor,
+    required this.textStyle,
   });
   final void Function(String value) input;
   final void Function() backspace;
-  final Color keypadNumberColor;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -151,8 +151,8 @@ class _Keypad extends StatelessWidget {
                         onPressed: backspace,
                         icon: Icon(
                           Icons.backspace_outlined,
-                          size: 30,
-                          color: keypadNumberColor,
+                          size: textStyle?.fontSize ?? 30,
+                          color: textStyle?.color ?? Colors.black,
                         ),
                       ),
                     )
@@ -168,10 +168,11 @@ class _Keypad extends StatelessWidget {
                           ),
                           child: Text(
                             keypadMatrix[i][j],
-                            style: Theme.of(context)
-                                .textTheme
-                                .displaySmall
-                                ?.copyWith(color: keypadNumberColor),
+                            style: textStyle ??
+                                Theme.of(context)
+                                    .textTheme
+                                    .displaySmall
+                                    ?.copyWith(color: Colors.black),
                           ),
                         ),
                       ),
