@@ -1,6 +1,22 @@
 import 'package:flutter/material.dart';
 
 class PincodeView extends StatefulWidget {
+  /// Creates a PIN code input view.
+  ///
+  /// [length] The length of the PIN code to be entered.
+  ///
+  /// [onComplete] A callback function that gets called when the PIN code is complete.
+  ///
+  /// [keypadTextStyle] The text style for the keypad numbers.
+  ///
+  /// [indicatorColor] The color of the active indicator in the PIN code input.
+  ///
+  /// [indicatorInactiveColor] The color of the inactive indicators in the PIN code input.
+  ///
+  /// [label] The label to be displayed above the PIN code input.
+  ///
+  /// [logo] The logo to be displayed above the PIN code input.
+  ///
   const PincodeView({
     required this.length,
     required this.onComplete,
