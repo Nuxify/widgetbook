@@ -20,9 +20,8 @@
 
  - [x] **Filled TextField:** `FilledTextField()`
  - [x] **Outlined TextField:** `OutlinedTextField()`
- - [ ] Dropdown
- - [ ] Multi select dropdowns
- - [ ] Pincode Texfield
+ - [x] **Dropdown:** `DropdownMenu()`
+ - [x] **Pincode Texfield:** `PincodeView()`
  - [ ] File Picker
  - [ ] QR Reader (rounded squares on side)
  
