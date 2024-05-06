@@ -25,7 +25,7 @@
  - [ ] QR Reader (rounded squares on side)
  
 # Views
- - [ ] Alert Modal
+ - [x] **Alert Modal:**  `AppAlertDialog()`
  - [ ] BottomSheet
  - [ ] Expanded Bottom Sheet
  - [ ] List Item
