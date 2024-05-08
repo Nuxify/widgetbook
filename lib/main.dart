@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -9,13 +14,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SafeArea(
-          child: Column(
-            children: [],
-          ),
+    return const Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [],
         ),
       ),
     );

@@ -26,12 +26,12 @@
  
 # Views
  - [x] **Alert Modal:**  `AppAlertDialog()`
- - [ ] BottomSheet
- - [ ] Expanded Bottom Sheet
- - [ ] List Item
-	 - [ ] 1 line
-	 - [ ] 2 lines
-	 - [ ] 3 lines
+ - [x] **BottomSheet:** `AppBottomSheet()`, triggered by the `openBottomSheet()` helper function
+ - [x] **Expanded BottomSheet:** `AppBottomSheet()`, triggered by the `openBottomSheet()` helper function
+ - [x] **List Item:** `ListTile()`
+	 - [x] 1 line
+	 - [x] 2 lines
+	 - [x] 3 lines
  - [ ] Passcode
 	 - [ ] Field
 	 - [ ] Numpad
