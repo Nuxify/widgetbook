@@ -32,9 +32,6 @@
 	 - [x] 1 line
 	 - [x] 2 lines
 	 - [x] 3 lines
- - [ ] Passcode
-	 - [ ] Field
-	 - [ ] Numpad
 
 # Layout
 
