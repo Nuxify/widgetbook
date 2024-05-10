@@ -2,6 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class QRScanner extends StatelessWidget {
+  /// It provides a visual representation of a QR code scanner with customizable border styling.
+  ///
+  ///
+  /// [onDetect]  A required callback function that is triggered when a QR code is detected. It returns the captured barcode information.
+  ///
+  /// [borderColor] A required parameter specifying the color of the border surrounding the QR scanner.
+  ///
+  /// [borderWidth] An optional parameter specifying the width of the border. Default value is 7.
   const QRScanner({
     required this.onDetect,
     required this.borderColor,
