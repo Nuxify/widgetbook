@@ -22,7 +22,7 @@
  - [x] **Outlined TextField:** `OutlinedTextField()`
  - [x] **Dropdown:** `DropdownMenu()`
  - [x] **Pincode Texfield:** `PincodeView()`
- - [ ] QR Reader (rounded squares on side)
+ - [x] **QR Reader:** `QRScanner()`
  
 # Views
  - [x] **Alert Modal:**  `AppAlertDialog()`
