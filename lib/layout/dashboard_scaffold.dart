@@ -2,19 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:nuxify_widgetbook/gen/assets.gen.dart';
 import 'package:nuxify_widgetbook/navigation/app_bottom_navigation.dart';
 
+/// Note: This widget is provided for reference purposes only.
+/// Customize and modify it as needed to suit the specific requirements.
 class DashboardScaffold extends StatefulWidget {
-  /// A custom scaffold widget designed to provide a flexible layout for dashboard screens. It supports a floating bottom navigation bar and a customizable body.
-  ///
-  /// [body] A required widget that represents the main content of the scaffold. This will be displayed in the primary area of the scaffold.
-  ///
-  /// [isFloatingBottomNavBar] A boolean that determines whether the bottom navigation bar should float above the body content. Default is true.
   const DashboardScaffold({
-    required this.body,
-    this.isFloatingBottomNavBar = true,
     super.key,
   });
-  final bool isFloatingBottomNavBar;
-  final Widget body;
 
   @override
   State<DashboardScaffold> createState() => _DashboardScaffoldState();
@@ -84,25 +77,19 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: widget.body,
-      ),
-      floatingActionButtonLocation: widget.isFloatingBottomNavBar
-          ? FloatingActionButtonLocation.centerDocked
-          : null,
-      floatingActionButton: widget.isFloatingBottomNavBar
-          ? AppBottomNavigation(
-              activeIndex: activeIndex,
-              items: bottomNavItems,
-              isFloatingBottomNavBar: widget.isFloatingBottomNavBar,
-            )
-          : null,
-      bottomNavigationBar: widget.isFloatingBottomNavBar
-          ? null
-          : AppBottomNavigation(
-              activeIndex: activeIndex,
-              items: bottomNavItems,
-              isFloatingBottomNavBar: widget.isFloatingBottomNavBar,
+        child: Stack(
+          children: <Widget>[
+            ListView.builder(
+              itemBuilder: (context, index) => Text('Sample #$index'),
             ),
+            AppBottomNavigation(
+              activeIndex: activeIndex,
+              items: bottomNavItems,
+              isFloatingBottomNavBar: true,
+            )
+          ],
+        ),
+      ),
     );
   }
 }
