@@ -22,7 +22,7 @@
  - [x] **Outlined TextField:** `OutlinedTextField()`
  - [x] **Dropdown:** `DropdownMenu()`
  - [x] **Pincode Texfield:** `PincodeView()`
- - [ ] QR Reader (rounded squares on side)
+ - [x] **QR Reader:** `QRScanner()`
  
 # Views
  - [x] **Alert Modal:**  `AppAlertDialog()`
@@ -32,9 +32,6 @@
 	 - [x] 1 line
 	 - [x] 2 lines
 	 - [x] 3 lines
- - [ ] Passcode
-	 - [ ] Field
-	 - [ ] Numpad
 
 # Layout
 
