@@ -7,46 +7,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 Widget defaultUseCase(BuildContext context) {
   return Center(
     child: ChipIndicator(
-      backgroundColor: context.knobs.color(
-        label: 'Color',
-        initialValue: Theme.of(context).primaryColor,
-      ),
-      padding: EdgeInsets.fromLTRB(
-        context.knobs.double.slider(
-          label: 'Left Padding',
-          initialValue: 15,
-        ),
-        context.knobs.double.slider(
-          label: 'Top Padding',
-          initialValue: 4,
-        ),
-        context.knobs.double.slider(
-          label: 'Right Padding',
-          initialValue: 15,
-        ),
-        context.knobs.double.slider(
-          label: 'Bottom Padding',
-          initialValue: 4,
-        ),
-      ),
-      child: Text(
-        context.knobs.string(
-          label: 'Label',
-          initialValue: 'New',
-        ),
-        style: TextStyle(
-          color: context.knobs.color(label: 'Text Color'),
-        ),
-      ),
-    ),
-  );
-}
-
-@widgetbook.UseCase(name: 'Clickable', type: ChipIndicator)
-Widget clickableUseCase(BuildContext context) {
-  return Center(
-    child: ChipIndicator(
-      onTap: () {},
+      onTap: context.knobs.boolean(label: 'Is tappable') ? () {} : null,
       backgroundColor: context.knobs.color(
         label: 'Color',
         initialValue: Theme.of(context).primaryColor,
