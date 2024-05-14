@@ -16,6 +16,25 @@ class BottomNavigationItem {
 }
 
 class AppBottomNavigation extends StatelessWidget {
+  /// A custom bottom navigation widget designed to support up to 6 items, with the option for a floating style. This widget is highly customizable, allowing you to define the active item, colors, text styles, icon sizes, and more.
+  ///
+  /// [isFloatingBottomNavBar] A boolean to determine if the bottom navigation bar should be floating.
+  ///
+  /// [activeIndex] The index of the currently active navigation item.
+  ///
+  /// [items] A list of BottomNavigationItem objects representing the items to be displayed in the bottom navigation bar. The maximum number of items is 6.
+  ///
+  /// [bottomMargin] The margin below the navigation bar when it is floating. Default is 15.
+  ///
+  /// [activeColor] The color used for the active item. Default is Colors.green.
+  ///
+  /// [inactiveColor] The color used for inactive items. Default is Colors.black54.
+  ///
+  /// [textStyle] An optional text style for the labels of the navigation items.
+  ///
+  /// [containerColor] An optional background color for the navigation bar container.
+  ///
+  /// [iconSize] An optional size for the icons in the navigation items.
   const AppBottomNavigation({
     required this.isFloatingBottomNavBar,
     required this.activeIndex,
@@ -46,7 +65,8 @@ class AppBottomNavigation extends StatelessWidget {
       constraints: BoxConstraints(
         maxWidth: width * .88,
       ),
-      margin: EdgeInsets.only(bottom: bottomMargin),
+      margin:
+          EdgeInsets.only(bottom: isFloatingBottomNavBar ? bottomMargin : 0),
       decoration: BoxDecoration(
         borderRadius: !isFloatingBottomNavBar
             ? const BorderRadius.only(
