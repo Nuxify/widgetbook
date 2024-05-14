@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nuxify_widgetbook/gen/assets.gen.dart';
-import 'package:nuxify_widgetbook/views/app_bottom_navigation.dart';
+import 'package:nuxify_widgetbook/navigation/app_bottom_navigation.dart';
 
 class DashboardScaffold extends StatefulWidget {
   /// A custom scaffold widget designed to provide a flexible layout for dashboard screens. It supports a floating bottom navigation bar and a customizable body.
