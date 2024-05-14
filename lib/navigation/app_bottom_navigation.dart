@@ -24,7 +24,7 @@ class AppBottomNavigation extends StatelessWidget {
   ///
   /// [items] A list of BottomNavigationItem objects representing the items to be displayed in the bottom navigation bar. The maximum number of items is 6.
   ///
-  /// [bottomMargin] The margin below the navigation bar when it is floating. Default is 15.
+  /// [yPosition] Only for floating nav bar: The position of floating nav bar.
   ///
   /// [activeColor] The color used for the active item. Default is Colors.green.
   ///
@@ -39,7 +39,7 @@ class AppBottomNavigation extends StatelessWidget {
     required this.isFloatingBottomNavBar,
     required this.activeIndex,
     required this.items,
-    this.bottomMargin = 15,
+    this.yPosition = 0.95,
     this.activeColor = Colors.green,
     this.inactiveColor = Colors.black54,
     this.textStyle,
@@ -48,7 +48,7 @@ class AppBottomNavigation extends StatelessWidget {
     super.key,
   }) : assert(!(items.length > 6), 'Max items should only be 6');
   final int activeIndex;
-  final double bottomMargin;
+  final double yPosition;
   final List<BottomNavigationItem> items;
   final Color activeColor;
   final Color inactiveColor;
@@ -61,77 +61,81 @@ class AppBottomNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
 
-    return Container(
-      constraints: BoxConstraints(
-        maxWidth: width * .88,
-      ),
-      margin:
-          EdgeInsets.only(bottom: isFloatingBottomNavBar ? bottomMargin : 0),
-      decoration: BoxDecoration(
-        borderRadius: !isFloatingBottomNavBar
-            ? const BorderRadius.only(
-                topLeft: Radius.circular(20.0),
-                topRight: Radius.circular(20.0),
-              )
-            : BorderRadius.circular(20),
-        color: containerColor ?? Colors.white,
-        boxShadow: const <BoxShadow>[
-          BoxShadow(
-            color: Color(0xFFF1F1F1),
-            spreadRadius: 4,
-            blurRadius: 10,
-          ),
-        ],
-      ),
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          for (int i = 0; i < items.length; i++)
-            Flexible(
-              child: IconButton(
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                icon: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 3),
-                      child: items[i].isIconData
-                          ? Icon(
-                              items[i].icon,
-                              size: iconSize ?? 20,
-                              color: activeIndex == i
-                                  ? activeColor
-                                  : inactiveColor,
-                            )
-                          : (items[i].icon as SvgGenImage).svg(
-                              width: iconSize ?? 20,
-                              colorFilter: ColorFilter.mode(
-                                activeIndex == i ? activeColor : inactiveColor,
-                                BlendMode.srcIn,
-                              )),
-                    ),
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        items[i].label,
-                        style: textStyle ??
-                            TextStyle(
-                              fontSize: 11,
-                              color: activeIndex == i
-                                  ? activeColor
-                                  : inactiveColor,
-                            ),
+    return Align(
+      alignment: Alignment(0, isFloatingBottomNavBar ? yPosition : 1),
+      child: Container(
+        width: width,
+        constraints: BoxConstraints(
+          maxWidth: isFloatingBottomNavBar ? width * 0.88 : width,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: !isFloatingBottomNavBar
+              ? const BorderRadius.only(
+                  topLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
+                )
+              : BorderRadius.circular(20),
+          color: containerColor ?? Colors.white,
+          boxShadow: const <BoxShadow>[
+            BoxShadow(
+              color: Color(0xFFF1F1F1),
+              spreadRadius: 4,
+              blurRadius: 10,
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            for (int i = 0; i < items.length; i++)
+              Flexible(
+                child: IconButton(
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  icon: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 3),
+                        child: items[i].isIconData
+                            ? Icon(
+                                items[i].icon,
+                                size: iconSize ?? 20,
+                                color: activeIndex == i
+                                    ? activeColor
+                                    : inactiveColor,
+                              )
+                            : (items[i].icon as SvgGenImage).svg(
+                                width: iconSize ?? 20,
+                                colorFilter: ColorFilter.mode(
+                                  activeIndex == i
+                                      ? activeColor
+                                      : inactiveColor,
+                                  BlendMode.srcIn,
+                                )),
                       ),
-                    ),
-                  ],
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          items[i].label,
+                          style: textStyle ??
+                              TextStyle(
+                                fontSize: 11,
+                                color: activeIndex == i
+                                    ? activeColor
+                                    : inactiveColor,
+                              ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  onPressed: items[i].onTap,
                 ),
-                onPressed: items[i].onTap,
-              ),
-            )
-        ],
+              )
+          ],
+        ),
       ),
     );
   }
