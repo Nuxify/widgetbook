@@ -34,9 +34,8 @@
 	 - [x] 3 lines
 
 # Layout
+ - [x] **Dashboard Scaffold:** DashboardScaffold()
 
 
 # Navigation
-
- - [ ] Floating Bottom Navigation
- - [ ] Static Bottom Navigation
+ - [x] **App Bottom Navigation:** AppBottomNavigation()
