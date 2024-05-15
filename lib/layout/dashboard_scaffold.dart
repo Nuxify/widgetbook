@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/gen/assets.gen.dart';
 import 'package:nuxify_widgetbook/navigation/app_bottom_navigation.dart';
 
 /// Note: This widget is provided for reference purposes only.
@@ -69,7 +68,7 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
         });
       },
       label: 'Menu',
-      icon: Assets.icons.menu,
+      icon: Icons.menu,
     ),
   ];
 
