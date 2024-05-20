@@ -21,65 +21,23 @@ class _BottomNavigation extends StatefulWidget {
 class __BottomNavigationState extends State<_BottomNavigation> {
   int activeIndex = 0;
 
-  late final List<BottomNavigationItem> bottomNavItems = <BottomNavigationItem>[
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 0;
-        });
-      },
-      label: 'Home',
-      icon: Icons.home,
-    ),
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 1;
-        });
-      },
-      label: 'Chats',
-      icon: Icons.chat,
-    ),
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 2;
-        });
-      },
-      label: 'Rewards',
-      icon: Icons.golf_course_sharp,
-    ),
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 3;
-        });
-      },
-      label: 'Cart',
-      icon: Icons.shopping_basket,
-    ),
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 4;
-        });
-      },
-      label: 'Profile',
-      icon: Icons.person_4_rounded,
-    ),
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 5;
-        });
-      },
-      label: 'Menu',
-      icon: Icons.menu,
-    ),
-  ];
+  // late List<BottomNavigationItem> bottomNavItems = ;
 
   @override
   Widget build(BuildContext context) {
+    final Color activeColor = context.knobs.color(
+      label: 'Active Color',
+      initialValue: Colors.green,
+    );
+    final Color inactiveColor = context.knobs.color(
+      label: 'Inactive Color',
+      initialValue: Colors.black54,
+    );
+    final double fontSize = context.knobs.double
+        .slider(label: 'Font Size', initialValue: 11, min: 9, max: 15);
+    final double iconSize = context.knobs.double
+        .slider(label: 'Icon Size', initialValue: 20, min: 18, max: 30);
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -89,24 +47,125 @@ class __BottomNavigationState extends State<_BottomNavigation> {
             ),
             AppBottomNavigation(
               activeIndex: activeIndex,
-              activeColor: context.knobs.color(
-                label: 'Active Color',
-                initialValue: Colors.green,
-              ),
-              inactiveColor: context.knobs.color(
-                label: 'Inactive Color',
-                initialValue: Colors.black54,
-              ),
               containerColor: context.knobs.color(
                 label: 'Container Color',
               ),
-              iconSize: context.knobs.double.slider(
-                label: 'Icon Size',
-                initialValue: 20,
-                max: 30,
-                min: 20,
-              ),
-              items: bottomNavItems.sublist(
+              items: <BottomNavigationItem>[
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 0;
+                    });
+                  },
+                  label: Text(
+                    'Home',
+                    style: TextStyle(
+                      fontSize: fontSize,
+                      color: activeIndex == 0 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.home,
+                    size: iconSize,
+                    color: activeIndex == 0 ? activeColor : inactiveColor,
+                  ),
+                ),
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 1;
+                    });
+                  },
+                  label: Text(
+                    'Chats',
+                    style: TextStyle(
+                      fontSize: fontSize,
+                      color: activeIndex == 1 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.chat,
+                    size: iconSize,
+                    color: activeIndex == 1 ? activeColor : inactiveColor,
+                  ),
+                ),
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 2;
+                    });
+                  },
+                  label: Text(
+                    'Rewards',
+                    style: TextStyle(
+                      fontSize: fontSize,
+                      color: activeIndex == 2 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.golf_course_sharp,
+                    size: iconSize,
+                    color: activeIndex == 2 ? activeColor : inactiveColor,
+                  ),
+                ),
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 3;
+                    });
+                  },
+                  label: Text(
+                    'Cart',
+                    style: TextStyle(
+                      fontSize: fontSize,
+                      color: activeIndex == 3 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.shopping_basket,
+                    size: iconSize,
+                    color: activeIndex == 3 ? activeColor : inactiveColor,
+                  ),
+                ),
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 4;
+                    });
+                  },
+                  label: Text(
+                    'Profile',
+                    style: TextStyle(
+                      fontSize: fontSize,
+                      color: activeIndex == 4 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.person_4_rounded,
+                    size: iconSize,
+                    color: activeIndex == 4 ? activeColor : inactiveColor,
+                  ),
+                ),
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 5;
+                    });
+                  },
+                  label: Text(
+                    'Menu',
+                    style: TextStyle(
+                      fontSize: fontSize,
+                      color: activeIndex == 5 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.menu,
+                    size: iconSize,
+                    color: activeIndex == 5 ? activeColor : inactiveColor,
+                  ),
+                ),
+              ].sublist(
                 0,
                 context.knobs.int.slider(
                   label: 'Bottom Nav Items.',

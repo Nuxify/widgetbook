@@ -13,64 +13,10 @@ class DashboardScaffold extends StatefulWidget {
 }
 
 class _DashboardScaffoldState extends State<DashboardScaffold> {
-  int activeIndex = 0;
+  final Color activeColor = Colors.green;
+  final Color inactiveColor = Colors.black54;
 
-  late final List<BottomNavigationItem> bottomNavItems = <BottomNavigationItem>[
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 0;
-        });
-      },
-      label: 'Home',
-      icon: Icons.home,
-    ),
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 1;
-        });
-      },
-      label: 'Chats',
-      icon: Icons.chat,
-    ),
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 2;
-        });
-      },
-      label: 'Rewards',
-      icon: Icons.golf_course_sharp,
-    ),
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 3;
-        });
-      },
-      label: 'Cart',
-      icon: Icons.shopping_basket,
-    ),
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 4;
-        });
-      },
-      label: 'Profile',
-      icon: Icons.person_4_rounded,
-    ),
-    BottomNavigationItem(
-      onTap: () {
-        setState(() {
-          activeIndex = 5;
-        });
-      },
-      label: 'Menu',
-      icon: Icons.menu,
-    ),
-  ];
+  int activeIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +29,122 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
             ),
             AppBottomNavigation(
               activeIndex: activeIndex,
-              items: bottomNavItems,
+              items: <BottomNavigationItem>[
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 0;
+                    });
+                  },
+                  label: Text(
+                    'Home',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: activeIndex == 0 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.home,
+                    size: 20,
+                    color: activeIndex == 0 ? activeColor : inactiveColor,
+                  ),
+                ),
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 1;
+                    });
+                  },
+                  label: Text(
+                    'Chats',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: activeIndex == 1 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.chat,
+                    size: 20,
+                    color: activeIndex == 1 ? activeColor : inactiveColor,
+                  ),
+                ),
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 2;
+                    });
+                  },
+                  label: Text(
+                    'Rewards',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: activeIndex == 2 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.golf_course_sharp,
+                    size: 20,
+                    color: activeIndex == 2 ? activeColor : inactiveColor,
+                  ),
+                ),
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 3;
+                    });
+                  },
+                  label: Text(
+                    'Cart',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: activeIndex == 3 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.shopping_basket,
+                    size: 20,
+                    color: activeIndex == 3 ? activeColor : inactiveColor,
+                  ),
+                ),
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 4;
+                    });
+                  },
+                  label: Text(
+                    'Profile',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: activeIndex == 4 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.person_4_rounded,
+                    size: 20,
+                    color: activeIndex == 4 ? activeColor : inactiveColor,
+                  ),
+                ),
+                BottomNavigationItem(
+                  onTap: () {
+                    setState(() {
+                      activeIndex = 5;
+                    });
+                  },
+                  label: Text(
+                    'Menu',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: activeIndex == 5 ? activeColor : inactiveColor,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.menu,
+                    size: 20,
+                    color: activeIndex == 5 ? activeColor : inactiveColor,
+                  ),
+                ),
+              ],
               isFloatingBottomNavBar: true,
             )
           ],
