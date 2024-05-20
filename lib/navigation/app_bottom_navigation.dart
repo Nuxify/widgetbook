@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/gen/assets.gen.dart';
 
 class BottomNavigationItem {
   BottomNavigationItem({
@@ -9,10 +8,8 @@ class BottomNavigationItem {
   });
 
   final VoidCallback onTap;
-  final String label;
-  final dynamic icon;
-
-  bool get isIconData => icon is IconData;
+  final Widget label;
+  final Widget icon;
 }
 
 class AppBottomNavigation extends StatelessWidget {
@@ -26,35 +23,23 @@ class AppBottomNavigation extends StatelessWidget {
   ///
   /// [yPosition] Only for floating nav bar: The position of floating nav bar.
   ///
-  /// [activeColor] The color used for the active item. Default is Colors.green.
-  ///
-  /// [inactiveColor] The color used for inactive items. Default is Colors.black54.
-  ///
   /// [textStyle] An optional text style for the labels of the navigation items.
   ///
   /// [containerColor] An optional background color for the navigation bar container.
-  ///
-  /// [iconSize] An optional size for the icons in the navigation items.
   const AppBottomNavigation({
     required this.isFloatingBottomNavBar,
     required this.activeIndex,
     required this.items,
     this.yPosition = 0.95,
-    this.activeColor = Colors.green,
-    this.inactiveColor = Colors.black54,
     this.textStyle,
     this.containerColor,
-    this.iconSize,
     super.key,
   }) : assert(!(items.length > 6), 'Max items should only be 6');
   final int activeIndex;
   final double yPosition;
   final List<BottomNavigationItem> items;
-  final Color activeColor;
-  final Color inactiveColor;
   final Color? containerColor;
   final TextStyle? textStyle;
-  final double? iconSize;
   final bool isFloatingBottomNavBar;
 
   @override
@@ -99,35 +84,11 @@ class AppBottomNavigation extends StatelessWidget {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.only(bottom: 3),
-                        child: items[i].isIconData
-                            ? Icon(
-                                items[i].icon,
-                                size: iconSize ?? 20,
-                                color: activeIndex == i
-                                    ? activeColor
-                                    : inactiveColor,
-                              )
-                            : (items[i].icon as SvgGenImage).svg(
-                                width: iconSize ?? 20,
-                                colorFilter: ColorFilter.mode(
-                                  activeIndex == i
-                                      ? activeColor
-                                      : inactiveColor,
-                                  BlendMode.srcIn,
-                                )),
+                        child: items[i].icon,
                       ),
                       FittedBox(
                         fit: BoxFit.scaleDown,
-                        child: Text(
-                          items[i].label,
-                          style: textStyle ??
-                              TextStyle(
-                                fontSize: 11,
-                                color: activeIndex == i
-                                    ? activeColor
-                                    : inactiveColor,
-                              ),
-                        ),
+                        child: items[i].label,
                       ),
                     ],
                   ),
