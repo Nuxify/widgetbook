@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
 
+/// The AppAlertDialog is a custom widget that displays an alert dialog with a title, body text, an action button, and an optional cancel button.
+///
+/// The dialog can be customized by passing the desired parameters when creating an instance of AppAlertDialog.
+///
+/// This widget is built using the Flutter framework and is designed to provide a more structured way to display alerts throughout your app with consistent design and behavior.
+///
 class AppAlertDialog extends StatelessWidget {
+  /// [title] A String representing the title of the alert dialog. This should be concise
+  ///
+  /// [bodyText] A String containing the main message or content of the dialog.
+  ///
+  /// [actionButton] A Widget, typically a button that allows the user to take an action in response to the alert.
+  ///
+  /// [hasCancelButton] A bool that indicates if a cancel button should be included in the dialog.
   const AppAlertDialog({
     required this.title,
     required this.bodyText,
     required this.actionButton,
+    this.surfaceTintColor = Colors.white,
+    this.backgroundColor,
     this.hasCancelButton = true,
     super.key,
   });
@@ -12,10 +27,14 @@ class AppAlertDialog extends StatelessWidget {
   final String bodyText;
   final Widget actionButton;
   final bool hasCancelButton;
+  final Color surfaceTintColor;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      surfaceTintColor: surfaceTintColor,
+      backgroundColor: backgroundColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
