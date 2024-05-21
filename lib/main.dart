@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/layout/scaffold_layout.dart';
+import 'package:nuxify_widgetbook/layout/dashboard_scaffold.dart';
 
 void main() {
   runApp(
@@ -15,12 +15,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScaffoldLayout(
-      body: Column(
-        children: [
-          Text('Screen 1'),
-        ],
-      ),
-    );
+    return const DashboardScaffold();
   }
 }
