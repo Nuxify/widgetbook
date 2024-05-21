@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^2.0.10+1
   mobile_scanner: ^5.1.0
 
 dev_dependencies:

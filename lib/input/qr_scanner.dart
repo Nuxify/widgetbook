@@ -79,8 +79,8 @@ class _CameraCurvedFrame extends CustomPainter {
     path.moveTo(width * 0.25, 0);
     path.lineTo(width * 0.1, 0);
     path.quadraticBezierTo(
-      width * 0.010,
-      height * 0.014,
+      width * 0.017,
+      height * 0.020,
       0,
       height * 0.1,
     );
@@ -100,7 +100,7 @@ class _CameraCurvedFrame extends CustomPainter {
     /// Third
     path.moveTo(0, height * 0.75);
     path.lineTo(0, height * 0.9);
-    path.quadraticBezierTo(width * 0.005, height * 0.979, width * 0.09, height);
+    path.quadraticBezierTo(width * 0.018, height * 0.979, width * 0.09, height);
     path.lineTo(width * 0.25, height);
 
     /// Fourth

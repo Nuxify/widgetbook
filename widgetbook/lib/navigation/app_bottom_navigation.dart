@@ -1,25 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:nuxify_widgetbook/navigation/app_bottom_navigation.dart';
+import 'package:widgetbook/widgetbook.dart';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
-/// Note: This widget is provided for reference purposes only.
-/// Customize and modify it as needed to suit the specific requirements.
-class DashboardScaffold extends StatefulWidget {
-  const DashboardScaffold({
-    super.key,
-  });
-
-  @override
-  State<DashboardScaffold> createState() => _DashboardScaffoldState();
+@widgetbook.UseCase(name: 'Default', type: AppBottomNavigation)
+Widget defaultUseCase(BuildContext context) {
+  return const Align(
+    alignment: Alignment.bottomCenter,
+    child: _BottomNavigation(),
+  );
 }
 
-class _DashboardScaffoldState extends State<DashboardScaffold> {
-  final Color activeColor = Colors.green;
-  final Color inactiveColor = Colors.black54;
+class _BottomNavigation extends StatefulWidget {
+  const _BottomNavigation();
 
+  @override
+  State<_BottomNavigation> createState() => __BottomNavigationState();
+}
+
+class __BottomNavigationState extends State<_BottomNavigation> {
   int activeIndex = 0;
+
+  // late List<BottomNavigationItem> bottomNavItems = ;
 
   @override
   Widget build(BuildContext context) {
+    final Color activeColor = context.knobs.color(
+      label: 'Active Color',
+      initialValue: Colors.green,
+    );
+    final Color inactiveColor = context.knobs.color(
+      label: 'Inactive Color',
+      initialValue: Colors.black54,
+    );
+    final double fontSize = context.knobs.double
+        .slider(label: 'Font Size', initialValue: 11, min: 9, max: 15);
+    final double iconSize = context.knobs.double
+        .slider(label: 'Icon Size', initialValue: 20, min: 18, max: 30);
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -29,6 +47,9 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
             ),
             AppBottomNavigation(
               activeIndex: activeIndex,
+              containerColor: context.knobs.color(
+                label: 'Container Color',
+              ),
               items: <BottomNavigationItem>[
                 BottomNavigationItem(
                   onTap: () {
@@ -39,13 +60,13 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   label: Text(
                     'Home',
                     style: TextStyle(
-                      fontSize: 11,
+                      fontSize: fontSize,
                       color: activeIndex == 0 ? activeColor : inactiveColor,
                     ),
                   ),
                   icon: Icon(
                     Icons.home,
-                    size: 20,
+                    size: iconSize,
                     color: activeIndex == 0 ? activeColor : inactiveColor,
                   ),
                 ),
@@ -58,13 +79,13 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   label: Text(
                     'Chats',
                     style: TextStyle(
-                      fontSize: 11,
+                      fontSize: fontSize,
                       color: activeIndex == 1 ? activeColor : inactiveColor,
                     ),
                   ),
                   icon: Icon(
                     Icons.chat,
-                    size: 20,
+                    size: iconSize,
                     color: activeIndex == 1 ? activeColor : inactiveColor,
                   ),
                 ),
@@ -77,13 +98,13 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   label: Text(
                     'Rewards',
                     style: TextStyle(
-                      fontSize: 11,
+                      fontSize: fontSize,
                       color: activeIndex == 2 ? activeColor : inactiveColor,
                     ),
                   ),
                   icon: Icon(
                     Icons.golf_course_sharp,
-                    size: 20,
+                    size: iconSize,
                     color: activeIndex == 2 ? activeColor : inactiveColor,
                   ),
                 ),
@@ -96,13 +117,13 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   label: Text(
                     'Cart',
                     style: TextStyle(
-                      fontSize: 11,
+                      fontSize: fontSize,
                       color: activeIndex == 3 ? activeColor : inactiveColor,
                     ),
                   ),
                   icon: Icon(
                     Icons.shopping_basket,
-                    size: 20,
+                    size: iconSize,
                     color: activeIndex == 3 ? activeColor : inactiveColor,
                   ),
                 ),
@@ -115,13 +136,13 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   label: Text(
                     'Profile',
                     style: TextStyle(
-                      fontSize: 11,
+                      fontSize: fontSize,
                       color: activeIndex == 4 ? activeColor : inactiveColor,
                     ),
                   ),
                   icon: Icon(
                     Icons.person_4_rounded,
-                    size: 20,
+                    size: iconSize,
                     color: activeIndex == 4 ? activeColor : inactiveColor,
                   ),
                 ),
@@ -134,18 +155,35 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   label: Text(
                     'Menu',
                     style: TextStyle(
-                      fontSize: 11,
+                      fontSize: fontSize,
                       color: activeIndex == 5 ? activeColor : inactiveColor,
                     ),
                   ),
                   icon: Icon(
                     Icons.menu,
-                    size: 20,
+                    size: iconSize,
                     color: activeIndex == 5 ? activeColor : inactiveColor,
                   ),
                 ),
-              ],
-              isFloatingBottomNavBar: true,
+              ].sublist(
+                0,
+                context.knobs.int.slider(
+                  label: 'Bottom Nav Items.',
+                  initialValue: 6,
+                  max: 6,
+                  min: 1,
+                ),
+              ),
+              isFloatingBottomNavBar: context.knobs.boolean(
+                label: 'Floating Navigation Bar.',
+                initialValue: true,
+              ),
+              yPosition: context.knobs.double.slider(
+                label: 'Y Position',
+                initialValue: 0.95,
+                max: 1,
+                min: 0.6,
+              ),
             )
           ],
         ),
