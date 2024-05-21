@@ -1,17 +1,5 @@
 import 'package:flutter/material.dart';
 
-class BottomNavigationItem {
-  BottomNavigationItem({
-    required this.onTap,
-    required this.label,
-    required this.icon,
-  });
-
-  final VoidCallback onTap;
-  final Widget label;
-  final Widget icon;
-}
-
 class AppBottomNavigation extends StatelessWidget {
   /// A custom bottom navigation widget designed to support up to 6 items, with the option for a floating style. This widget is highly customizable, allowing you to define the active item, colors, text styles, icon sizes, and more.
   ///
@@ -100,4 +88,16 @@ class AppBottomNavigation extends StatelessWidget {
       ),
     );
   }
+}
+
+class BottomNavigationItem {
+  BottomNavigationItem({
+    required this.onTap,
+    required this.label,
+    required this.icon,
+  });
+
+  final VoidCallback onTap;
+  final Widget label;
+  final Widget icon;
 }

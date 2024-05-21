@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// A custom bottom sheet widget for displaying content with optional title,
-/// leading, and trailing widgets.
 class AppBottomsheet extends StatelessWidget {
+  /// A custom bottom sheet widget for displaying content with optional title, leading, and trailing widgets.
+  ///
   /// [body] The main content of the bottom sheet.
   ///
   /// [isExpanded] A boolean value indicating whether the body should be expanded to fill the available space vertically. If true, the body will be wrapped in an Expanded widget.

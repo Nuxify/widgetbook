@@ -38,7 +38,6 @@ class OutlinedTextField extends StatelessWidget {
   /// [prefix] A widget to display before the text field.
   ///
   /// [suffix] A widget to display after the text field.
-  ///
   const OutlinedTextField({
     this.controller,
     this.borderRadius = 30,

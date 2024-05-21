@@ -16,7 +16,6 @@ class PincodeView extends StatefulWidget {
   /// [label] The label to be displayed above the PIN code input.
   ///
   /// [logo] The logo to be displayed above the PIN code input.
-  ///
   const PincodeView({
     required this.length,
     required this.onComplete,
