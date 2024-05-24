@@ -37,7 +37,7 @@ jobs:
 
       - name: Set Publish Branch
         id: set_publish_branch
-        run: echo "publish_branch=release/widgetbook-playground" >> $GITHUB_ENV
+        run: echo "publish_branch=release/flutter-web-production" >> $GITHUB_ENV
 
       - name: Deploy to GitHub Pages/Branch for release playground
         uses: peaceiris/actions-gh-pages@v3
