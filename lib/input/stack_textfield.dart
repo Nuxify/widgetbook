@@ -141,6 +141,7 @@ class _StackTextFieldState extends State<StackTextField> {
         ),
         if (!isEmpty)
           Positioned(
+            key: const Key('stackLabel'),
             left: widget.prefixIcon != null ? 40.5 : 12.5,
             top: widget.textField != null ? 6 : 9,
             child: Text(
