@@ -10,23 +10,23 @@ const Duration fadeInDuration = Duration(milliseconds: 500);
 class CardExpandedLoader extends StatelessWidget {
   const CardExpandedLoader({
     required this.height,
-    this.baseColor = Colors.black,
-    this.highlightColor,
+    this.baseColor = const Color(0xFF607D8B),
+    this.highlightColor = const Color(0xFFCFD8DC),
     super.key,
   });
   final double height;
   final Color baseColor;
-  final Color? highlightColor;
+  final Color highlightColor;
 
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
       baseColor: baseColor,
-      highlightColor: highlightColor ?? Colors.black.withOpacity(0.2),
+      highlightColor: highlightColor,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: Colors.black.withOpacity(0.1),
+          color: baseColor.withOpacity(0.1),
         ),
         margin: const EdgeInsets.only(right: 8),
         height: height,
@@ -39,24 +39,24 @@ class CardLoader extends StatelessWidget {
   const CardLoader({
     required this.height,
     required this.width,
-    this.baseColor = Colors.black,
-    this.highlightColor,
+    this.baseColor = const Color(0xFF607D8B),
+    this.highlightColor = const Color(0xFFCFD8DC),
     super.key,
   });
   final double height;
   final double width;
   final Color baseColor;
-  final Color? highlightColor;
+  final Color highlightColor;
 
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
       baseColor: baseColor,
-      highlightColor: highlightColor ?? Colors.black.withOpacity(0.2),
+      highlightColor: highlightColor,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: Colors.black.withOpacity(0.1),
+          color: baseColor.withOpacity(0.1),
         ),
         margin: const EdgeInsets.only(right: 8),
         height: height,

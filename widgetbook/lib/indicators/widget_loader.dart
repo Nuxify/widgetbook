@@ -10,7 +10,10 @@ Widget defaultUseCase(BuildContext context) {
 
   return Center(
     child: Container(
-      color: Colors.white,
+      color:
+          !context.knobs.boolean(label: 'Dark background.', initialValue: true)
+              ? const Color(0xFFF5F7F8)
+              : const Color(0xFF1E201E),
       padding: const EdgeInsets.symmetric(horizontal: 50),
       child: Center(
         child: Column(
