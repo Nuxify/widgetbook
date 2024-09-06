@@ -23,6 +23,7 @@ Widget defaultUseCase(BuildContext context) {
           isDense: context.knobs.boolean(label: 'TextField isDense'),
           obscureText: context.knobs.boolean(label: 'TextField obscureText'),
           fillColor: context.knobs.color(label: 'Fill Color'),
+          enabled: context.knobs.boolean(label: 'Enabled', initialValue: true),
           borderRadius: context.knobs.double.slider(
               label: 'Border Radius', initialValue: 30, max: 50, min: 1),
           contentPadding: EdgeInsets.symmetric(

@@ -34,6 +34,8 @@ class FilledTextField extends StatelessWidget {
   /// [suffix] A widget to display after the text field.
   ///
   /// [prefix] A widget to display before the text field.
+  ///
+  /// [enabled] is an optional parameter that specifies whether the text field is enabled.
   const FilledTextField({
     this.controller,
     this.fillColor,
@@ -53,6 +55,7 @@ class FilledTextField extends StatelessWidget {
     this.floatingLabelBehavior = FloatingLabelBehavior.always,
     this.suffix,
     this.prefix,
+    this.enabled = true,
     super.key,
   });
   final Color? fillColor;
@@ -71,6 +74,7 @@ class FilledTextField extends StatelessWidget {
   final Widget? prefix;
   final Widget? suffix;
   final FloatingLabelBehavior floatingLabelBehavior;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +84,7 @@ class FilledTextField extends StatelessWidget {
       style: textStyle,
       obscureText: obscureText,
       decoration: InputDecoration(
+        enabled: enabled,
         prefixIcon: prefix,
         suffixIcon: suffix,
         hintText: hintText,

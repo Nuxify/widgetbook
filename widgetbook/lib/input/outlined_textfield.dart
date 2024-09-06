@@ -25,6 +25,8 @@ Widget defaultUseCase(BuildContext context) {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               OutlinedTextField(
+                enabled:
+                    context.knobs.boolean(label: 'Enabled', initialValue: true),
                 borderColor: context.knobs.color(label: 'Border Color'),
                 errorBorderColor:
                     context.knobs.color(label: 'Error Border Color'),

@@ -38,6 +38,8 @@ class OutlinedTextField extends StatelessWidget {
   /// [prefix] A widget to display before the text field.
   ///
   /// [suffix] A widget to display after the text field.
+  ///
+  /// [enabled] is an optional parameter that specifies whether the text field is enabled.
   const OutlinedTextField({
     this.controller,
     this.borderRadius = 30,
@@ -59,6 +61,7 @@ class OutlinedTextField extends StatelessWidget {
     this.floatingLabelBehavior = FloatingLabelBehavior.always,
     this.prefix,
     this.suffix,
+    this.enabled = true,
     super.key,
   });
 
@@ -79,6 +82,7 @@ class OutlinedTextField extends StatelessWidget {
   final Widget? prefix;
   final Widget? suffix;
   final FloatingLabelBehavior floatingLabelBehavior;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +92,7 @@ class OutlinedTextField extends StatelessWidget {
       style: textStyle,
       obscureText: obscureText,
       decoration: InputDecoration(
+        enabled: enabled,
         prefixIcon: prefix,
         suffixIcon: suffix,
         hintText: hintText,
