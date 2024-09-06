@@ -14,13 +14,19 @@ class AppBottomNavigation extends StatelessWidget {
   /// [textStyle] An optional text style for the labels of the navigation items.
   ///
   /// [containerColor] An optional background color for the navigation bar container.
+  ///
+  /// [boxShadow] An optional box shadow params.
+  ///
+  /// [width] An optional width for container
   const AppBottomNavigation({
     required this.isFloatingBottomNavBar,
     required this.activeIndex,
     required this.items,
+    this.width,
     this.yPosition = 0.95,
     this.textStyle,
     this.containerColor,
+    this.boxShadow,
     super.key,
   }) : assert(!(items.length > 6), 'Max items should only be 6');
   final int activeIndex;
@@ -29,34 +35,37 @@ class AppBottomNavigation extends StatelessWidget {
   final Color? containerColor;
   final TextStyle? textStyle;
   final bool isFloatingBottomNavBar;
+  final double? width;
+  final List<BoxShadow>? boxShadow;
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
+    final double innerWidth = MediaQuery.of(context).size.width;
 
     return Align(
       alignment: Alignment(0, isFloatingBottomNavBar ? yPosition : 1),
       child: Container(
-        width: width,
+        width: innerWidth,
         constraints: BoxConstraints(
-          maxWidth: isFloatingBottomNavBar ? width * 0.88 : width,
+          maxWidth: width ??
+              (isFloatingBottomNavBar ? innerWidth * 0.88 : innerWidth),
         ),
         decoration: BoxDecoration(
-          borderRadius: !isFloatingBottomNavBar
-              ? const BorderRadius.only(
-                  topLeft: Radius.circular(20.0),
-                  topRight: Radius.circular(20.0),
-                )
-              : BorderRadius.circular(20),
-          color: containerColor ?? Colors.white,
-          boxShadow: const <BoxShadow>[
-            BoxShadow(
-              color: Color(0xFFF1F1F1),
-              spreadRadius: 4,
-              blurRadius: 10,
-            ),
-          ],
-        ),
+            borderRadius: !isFloatingBottomNavBar
+                ? const BorderRadius.only(
+                    topLeft: Radius.circular(20.0),
+                    topRight: Radius.circular(20.0),
+                  )
+                : BorderRadius.circular(20),
+            color: containerColor ?? Colors.white,
+            boxShadow: boxShadow ??
+                const <BoxShadow>[
+                  BoxShadow(
+                    color: Color(0xFFF1F1F1),
+                    spreadRadius: 4,
+                    blurRadius: 10,
+                  ),
+                ]),
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         child: Row(
           mainAxisSize: MainAxisSize.min,
