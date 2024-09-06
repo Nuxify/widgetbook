@@ -7,25 +7,17 @@ import 'package:flutter/services.dart';
 ///
 /// [statusBarColor] changes the color of the status bar.
 ///
-/// [statusBarIconBrightness] defines the brightness for status bar icons (light or dark).
-///
-/// [statusBarBrightness] sets the overall brightness of the status bar.
-///
-/// [systemNavigationBarIconBrightness] adjusts the brightness of the system navigation bar icons.
+/// [brightness] describes the contrast of a theme or color palette.
 class AppStatusBar extends StatelessWidget implements PreferredSizeWidget {
   const AppStatusBar({
+    required this.brightness,
     this.backgroundColor,
     this.statusBarColor,
-    this.statusBarIconBrightness = Brightness.dark,
-    this.statusBarBrightness = Brightness.dark,
-    this.systemNavigationBarIconBrightness = Brightness.dark,
     Key? key,
   }) : super(key: key);
   final Color? backgroundColor;
   final Color? statusBarColor;
-  final Brightness? statusBarIconBrightness;
-  final Brightness? statusBarBrightness;
-  final Brightness? systemNavigationBarIconBrightness;
+  final Brightness brightness;
 
   @override
   Size get preferredSize => const Size.fromHeight(0);
@@ -39,9 +31,9 @@ class AppStatusBar extends StatelessWidget implements PreferredSizeWidget {
         elevation: 0,
         backgroundColor: backgroundColor,
         systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarIconBrightness: statusBarIconBrightness,
-          statusBarBrightness: statusBarBrightness,
-          systemNavigationBarIconBrightness: systemNavigationBarIconBrightness,
+          statusBarIconBrightness: brightness,
+          statusBarBrightness: brightness,
+          systemNavigationBarIconBrightness: brightness,
           statusBarColor: statusBarColor,
         ),
       ),
