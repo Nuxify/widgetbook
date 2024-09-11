@@ -40,6 +40,12 @@ class OutlinedTextField extends StatelessWidget {
   /// [suffix] A widget to display after the text field.
   ///
   /// [enabled] is an optional parameter that specifies whether the text field is enabled.
+  ///
+  /// [maxLength] The maximum number of characters (Unicode scalar values) to allow in the text field.
+  ///
+  /// [maxLines] The maximum number of lines for the text to span, wrapping if necessary.
+  ///
+  /// [counterText] Optional custom counter text to be used instead of the default counter.
   const OutlinedTextField({
     this.controller,
     this.borderRadius = 30,
@@ -62,6 +68,9 @@ class OutlinedTextField extends StatelessWidget {
     this.prefix,
     this.suffix,
     this.enabled = true,
+    this.maxLength,
+    this.maxLines,
+    this.counterText,
     super.key,
   });
 
@@ -83,6 +92,9 @@ class OutlinedTextField extends StatelessWidget {
   final Widget? suffix;
   final FloatingLabelBehavior floatingLabelBehavior;
   final bool enabled;
+  final int? maxLength;
+  final int? maxLines;
+  final String? counterText;
 
   @override
   Widget build(BuildContext context) {
@@ -91,8 +103,11 @@ class OutlinedTextField extends StatelessWidget {
       controller: controller,
       style: textStyle,
       obscureText: obscureText,
+      maxLength: maxLength,
+      maxLines: maxLines,
       decoration: InputDecoration(
         enabled: enabled,
+        counterText: counterText,
         prefixIcon: prefix,
         suffixIcon: suffix,
         hintText: hintText,

@@ -36,6 +36,12 @@ class FilledTextField extends StatelessWidget {
   /// [prefix] A widget to display before the text field.
   ///
   /// [enabled] is an optional parameter that specifies whether the text field is enabled.
+  /// 
+  /// [maxLength] The maximum number of characters (Unicode scalar values) to allow in the text field.
+  ///
+  /// [maxLines] The maximum number of lines for the text to span, wrapping if necessary.
+  ///
+  /// [counterText] Optional custom counter text to be used instead of the default counter.
   const FilledTextField({
     this.controller,
     this.fillColor,
@@ -56,6 +62,9 @@ class FilledTextField extends StatelessWidget {
     this.suffix,
     this.prefix,
     this.enabled = true,
+    this.maxLength,
+    this.maxLines,
+    this.counterText,
     super.key,
   });
   final Color? fillColor;
@@ -75,6 +84,9 @@ class FilledTextField extends StatelessWidget {
   final Widget? suffix;
   final FloatingLabelBehavior floatingLabelBehavior;
   final bool enabled;
+  final int? maxLength;
+  final int? maxLines;
+  final String? counterText;
 
   @override
   Widget build(BuildContext context) {
@@ -83,9 +95,12 @@ class FilledTextField extends StatelessWidget {
       controller: controller,
       style: textStyle,
       obscureText: obscureText,
+      maxLength: maxLength,
+      maxLines: maxLines,
       decoration: InputDecoration(
         enabled: enabled,
         prefixIcon: prefix,
+        counterText: counterText,
         suffixIcon: suffix,
         hintText: hintText,
         hintStyle: hintStyle,
