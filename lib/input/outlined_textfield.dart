@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class OutlinedTextField extends StatelessWidget {
   /// Creates a text field with an outlined appearance.
@@ -46,6 +47,14 @@ class OutlinedTextField extends StatelessWidget {
   /// [maxLines] The maximum number of lines for the text to span, wrapping if necessary.
   ///
   /// [counterText] Optional custom counter text to be used instead of the default counter.
+  ///
+  /// [textInputAction] The action to perform when the user is done typing the text.
+  ///
+  /// [onFieldSubmitted] A callback that is called when the user is done typing the text.
+  ///
+  /// [inputFormatters] A list of input formatters to apply to the text field.
+  ///
+  /// [focusNode] The focus node for the text field.
   const OutlinedTextField({
     this.controller,
     this.borderRadius = 30,
@@ -71,6 +80,10 @@ class OutlinedTextField extends StatelessWidget {
     this.maxLength,
     this.maxLines,
     this.counterText,
+    this.textInputAction,
+    this.onFieldSubmitted,
+    this.inputFormatters,
+    this.focusNode,
     super.key,
   });
 
@@ -95,6 +108,10 @@ class OutlinedTextField extends StatelessWidget {
   final int? maxLength;
   final int? maxLines;
   final String? counterText;
+  final TextInputAction? textInputAction;
+  final Function(String)? onFieldSubmitted;
+  final List<TextInputFormatter>? inputFormatters;
+  final FocusNode? focusNode;
 
   @override
   Widget build(BuildContext context) {
@@ -105,6 +122,10 @@ class OutlinedTextField extends StatelessWidget {
       obscureText: obscureText,
       maxLength: maxLength,
       maxLines: maxLines,
+      textInputAction: textInputAction,
+      onFieldSubmitted: onFieldSubmitted,
+      inputFormatters: inputFormatters,
+      focusNode: focusNode,
       decoration: InputDecoration(
         enabled: enabled,
         counterText: counterText,
