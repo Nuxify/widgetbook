@@ -55,6 +55,10 @@ class OutlinedTextField extends StatelessWidget {
   /// [inputFormatters] A list of input formatters to apply to the text field.
   ///
   /// [focusNode] The focus node for the text field.
+  ///
+  /// [readOnly] Whether the text field is read-only.
+  ///
+  /// [onTap] A callback that is called when the text field is tapped.
   const OutlinedTextField({
     this.controller,
     this.borderRadius = 30,
@@ -84,6 +88,8 @@ class OutlinedTextField extends StatelessWidget {
     this.onFieldSubmitted,
     this.inputFormatters,
     this.focusNode,
+    this.readOnly = false,
+    this.onTap,
     super.key,
   });
 
@@ -112,10 +118,14 @@ class OutlinedTextField extends StatelessWidget {
   final Function(String)? onFieldSubmitted;
   final List<TextInputFormatter>? inputFormatters;
   final FocusNode? focusNode;
+  final bool readOnly;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: onTap,
+      readOnly: readOnly,
       validator: validator,
       controller: controller,
       style: textStyle,

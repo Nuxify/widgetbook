@@ -51,6 +51,10 @@ class FilledTextField extends StatelessWidget {
   /// [inputFormatters] A list of TextInputFormatter objects that will be applied to the text field.
   ///
   /// [focusNode] A FocusNode that allows you to control the focus of the text field.
+  ///
+  /// [readOnly] Whether the text field is read-only.
+  ///
+  /// [onTap] A callback that is called when the text field is tapped.
   const FilledTextField({
     this.controller,
     this.fillColor,
@@ -76,9 +80,11 @@ class FilledTextField extends StatelessWidget {
     this.counterText,
     this.textInputAction,
     this.onFieldSubmitted,
-    super.key,
     this.focusNode,
     this.inputFormatters,
+    this.readOnly = false,
+    this.onTap,
+    super.key,
   });
   final Color? fillColor;
   final Color errorBorderColor = Colors.redAccent;
@@ -104,10 +110,14 @@ class FilledTextField extends StatelessWidget {
   final Function(String)? onFieldSubmitted;
   final List<TextInputFormatter>? inputFormatters;
   final FocusNode? focusNode;
+  final bool readOnly;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly: readOnly,
+      onTap: onTap,
       focusNode: focusNode,
       validator: validator,
       controller: controller,
