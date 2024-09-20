@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
 class FilledTextField extends StatelessWidget {
@@ -36,12 +37,24 @@ class FilledTextField extends StatelessWidget {
   /// [prefix] A widget to display before the text field.
   ///
   /// [enabled] is an optional parameter that specifies whether the text field is enabled.
-  /// 
+  ///
   /// [maxLength] The maximum number of characters (Unicode scalar values) to allow in the text field.
   ///
   /// [maxLines] The maximum number of lines for the text to span, wrapping if necessary.
   ///
   /// [counterText] Optional custom counter text to be used instead of the default counter.
+  ///
+  /// [textInputAction] The action to perform when the user is done entering text.
+  ///
+  /// [onFieldSubmitted] A callback that is called when the user is done entering text.
+  ///
+  /// [inputFormatters] A list of TextInputFormatter objects that will be applied to the text field.
+  ///
+  /// [focusNode] A FocusNode that allows you to control the focus of the text field.
+  ///
+  /// [readOnly] Whether the text field is read-only.
+  ///
+  /// [onTap] A callback that is called when the text field is tapped.
   const FilledTextField({
     this.controller,
     this.fillColor,
@@ -65,6 +78,12 @@ class FilledTextField extends StatelessWidget {
     this.maxLength,
     this.maxLines,
     this.counterText,
+    this.textInputAction,
+    this.onFieldSubmitted,
+    this.focusNode,
+    this.inputFormatters,
+    this.readOnly = false,
+    this.onTap,
     super.key,
   });
   final Color? fillColor;
@@ -87,16 +106,28 @@ class FilledTextField extends StatelessWidget {
   final int? maxLength;
   final int? maxLines;
   final String? counterText;
+  final TextInputAction? textInputAction;
+  final Function(String)? onFieldSubmitted;
+  final List<TextInputFormatter>? inputFormatters;
+  final FocusNode? focusNode;
+  final bool readOnly;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly: readOnly,
+      onTap: onTap,
+      focusNode: focusNode,
       validator: validator,
       controller: controller,
       style: textStyle,
       obscureText: obscureText,
       maxLength: maxLength,
       maxLines: maxLines,
+      textInputAction: textInputAction,
+      onFieldSubmitted: onFieldSubmitted,
+      inputFormatters: inputFormatters,
       decoration: InputDecoration(
         enabled: enabled,
         prefixIcon: prefix,
