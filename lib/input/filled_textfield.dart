@@ -55,6 +55,10 @@ class FilledTextField extends StatelessWidget {
   /// [readOnly] Whether the text field is read-only.
   ///
   /// [onTap] A callback that is called when the text field is tapped.
+  /// 
+  /// [keyboardType] Whether the keyboard layout uses num pad or alphabets
+  ///
+  /// [autovalidateMode] Determine if input user is valid according to set mode
   const FilledTextField({
     this.controller,
     this.fillColor,
@@ -83,6 +87,8 @@ class FilledTextField extends StatelessWidget {
     this.focusNode,
     this.inputFormatters,
     this.readOnly = false,
+    this.keyboardType,
+    this.autovalidateMode,
     this.onTap,
     super.key,
   });
@@ -112,6 +118,8 @@ class FilledTextField extends StatelessWidget {
   final FocusNode? focusNode;
   final bool readOnly;
   final Function()? onTap;
+  final TextInputType? keyboardType;
+  final AutovalidateMode? autovalidateMode;
 
   @override
   Widget build(BuildContext context) {
@@ -128,6 +136,8 @@ class FilledTextField extends StatelessWidget {
       textInputAction: textInputAction,
       onFieldSubmitted: onFieldSubmitted,
       inputFormatters: inputFormatters,
+      keyboardType: keyboardType,
+      autovalidateMode: autovalidateMode,
       decoration: InputDecoration(
         enabled: enabled,
         prefixIcon: prefix,

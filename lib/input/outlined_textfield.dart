@@ -59,6 +59,10 @@ class OutlinedTextField extends StatelessWidget {
   /// [readOnly] Whether the text field is read-only.
   ///
   /// [onTap] A callback that is called when the text field is tapped.
+  ///
+  /// [keyboardType] Whether the keyboard layout uses num pad or alphabets
+  ///
+  /// [autovalidateMode] Determine if input user is valid according to set mode
   const OutlinedTextField({
     this.controller,
     this.borderRadius = 30,
@@ -90,6 +94,8 @@ class OutlinedTextField extends StatelessWidget {
     this.focusNode,
     this.readOnly = false,
     this.onTap,
+    this.keyboardType,
+    this.autovalidateMode,
     super.key,
   });
 
@@ -120,6 +126,8 @@ class OutlinedTextField extends StatelessWidget {
   final FocusNode? focusNode;
   final bool readOnly;
   final Function()? onTap;
+  final TextInputType? keyboardType;
+  final AutovalidateMode? autovalidateMode;
 
   @override
   Widget build(BuildContext context) {
@@ -136,6 +144,8 @@ class OutlinedTextField extends StatelessWidget {
       onFieldSubmitted: onFieldSubmitted,
       inputFormatters: inputFormatters,
       focusNode: focusNode,
+      keyboardType: keyboardType,
+      autovalidateMode: autovalidateMode,
       decoration: InputDecoration(
         enabled: enabled,
         counterText: counterText,
