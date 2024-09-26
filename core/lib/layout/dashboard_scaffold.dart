@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/navigation/app_bottom_navigation.dart';
+import 'package:nuxify_widgetbook_core/navigation/app_bottom_navigation.dart';
 
 /// Note: This widget is provided for reference purposes only.
 /// Customize and modify it as needed to suit the specific requirements.

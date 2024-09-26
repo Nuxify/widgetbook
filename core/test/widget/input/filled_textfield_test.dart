@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nuxify_widgetbook/input/filled_textfield.dart';
-import 'package:nuxify_widgetbook/test/main_test.dart';
+import 'package:nuxify_widgetbook_core/input/filled_textfield.dart';
+import 'package:nuxify_widgetbook_core/test/main_test.dart';
 
 void main() {
   Future<void> widgetPumper(
@@ -42,6 +42,7 @@ void main() {
               floatingLabelBehavior: floatingLabelBehavior,
               suffix: suffix,
               prefix: prefix,
+              maxLines: 1,
             ),
           ),
         ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nuxify_widgetbook/input/stack_textfield.dart';
-import 'package:nuxify_widgetbook/test/main_test.dart';
+import 'package:nuxify_widgetbook_core/input/stack_textfield.dart';
+import 'package:nuxify_widgetbook_core/test/main_test.dart';
 
 void main() {
   Future<void> widgetPumper(

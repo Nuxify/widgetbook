@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/indicators/chip.dart';
+import 'package:nuxify_widgetbook_core/indicators/chip.dart';
 
 class ChipsSelection extends StatelessWidget {
   /// A row of selectable chips. It takes a list of items and a list of active indexes as input.

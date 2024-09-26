@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nuxify_widgetbook/test/main_test.dart';
-import 'package:nuxify_widgetbook/views/alert_dialog.dart';
+import 'package:nuxify_widgetbook_core/test/main_test.dart';
+import 'package:nuxify_widgetbook_core/views/alert_dialog.dart';
 
 void main() {
   Future<void> widgetPumper(

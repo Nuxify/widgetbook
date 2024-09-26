@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nuxify_widgetbook/layout/dashboard_scaffold.dart';
-import 'package:nuxify_widgetbook/navigation/app_bottom_navigation.dart';
-import 'package:nuxify_widgetbook/test/main_test.dart';
+import 'package:nuxify_widgetbook_core/layout/dashboard_scaffold.dart';
+import 'package:nuxify_widgetbook_core/navigation/app_bottom_navigation.dart';
+import 'package:nuxify_widgetbook_core/test/main_test.dart';
 
 void main() {
   Future<void> widgetPumper(

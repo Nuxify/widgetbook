@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/views/bottomsheet.dart';
+import 'package:nuxify_widgetbook_core/views/bottomsheet.dart';
 
 // Opens a bottom sheet with the provided body, title, leading, and trailing widgets.
 void openBottomSheet(

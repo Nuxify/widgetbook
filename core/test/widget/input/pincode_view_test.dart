@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nuxify_widgetbook/input/pincode_view.dart';
-import 'package:nuxify_widgetbook/test/main_test.dart';
+import 'package:nuxify_widgetbook_core/input/pincode_view.dart';
+import 'package:nuxify_widgetbook_core/test/main_test.dart';
 
 void main() {
   group('Pincode View.', () {

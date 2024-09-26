@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:nuxify_widgetbook/input/qr_scanner.dart';
-import 'package:nuxify_widgetbook/test/main_test.dart';
+import 'package:nuxify_widgetbook_qr_scanner/input/qr_scanner.dart';
+import 'package:nuxify_widgetbook_qr_scanner/test/main_test.dart';
 
 void main() {
   Future<void> widgetPumper(

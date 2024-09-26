@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/layout/dashboard_scaffold.dart';
+import 'package:nuxify_widgetbook_core/layout/dashboard_scaffold.dart';
 
 void main() {
   runApp(

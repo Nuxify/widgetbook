@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nuxify_widgetbook/views/bottomsheet.dart';
+import 'package:nuxify_widgetbook_core/views/bottomsheet.dart';
 
 void main() {
   group('Bottomsheet', () {
