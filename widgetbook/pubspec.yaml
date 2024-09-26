@@ -16,6 +16,11 @@ dependencies:
       url: git@github.com:josephgcedeno/widgetbook-mono-repo.git
       path: core
       ref: v0.0.1
+  nuxify_widgetbook_qr_scanner:
+    git:
+      url: git@github.com:josephgcedeno/widgetbook-mono-repo.git
+      path: qr_scanner
+      ref: v0.0.1
 
 dependency_overrides:
   accessibility_tools: ^1.0.0
