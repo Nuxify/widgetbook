@@ -1,0 +1,47 @@
+name: Build Static Website branch from Widgetbook directory from branch release/widgetbook-production
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+          flutter-version: "3.19.6"
+
+      - name: Clean flutter to be able to generate flutter.js every build
+        run: flutter clean
+        working-directory: ./widgetbook
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: ./widgetbook
+
+      - name: Build serialize data
+        run: flutter pub run build_runner build --delete-conflicting-outputs
+        working-directory: ./widgetbook
+
+      - name: Build web
+        run: flutter build web --web-renderer canvaskit --release
+        working-directory: ./widgetbook
+
+      - name: Set Publish Branch
+        id: set_publish_branch
+        run: echo "publish_branch=release/flutter-web-production" >> $GITHUB_ENV
+
+      - name: Deploy to GitHub Pages/Branch for release playground
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }} # We use Personal access token instead of Github token since it is set to create a branch container the static page generated from flutter
+          publish_dir: widgetbook/build/web
+          publish_branch: ${{ env.publish_branch }}
