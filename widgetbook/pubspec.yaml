@@ -11,8 +11,14 @@ dependencies:
     sdk: flutter
   widgetbook: ^3.7.1
   widgetbook_annotation: ^3.1.0
-  nuxify_widgetbook:
-    path: ../core/
+  nuxify_widgetbook_core:
+    git:
+      url: git@github.com:josephgcedeno/widgetbook-mono-repo.git
+      path: core
+      ref: v0.0.1
+
+dependency_overrides:
+  accessibility_tools: ^1.0.0
 
 dev_dependencies:
   flutter_test:
