@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  mobile_scanner: ^5.1.0
   shimmer: ^3.0.0
 
 dev_dependencies:
