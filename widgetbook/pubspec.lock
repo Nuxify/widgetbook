@@ -428,18 +428,18 @@ packages:
     dependency: "direct main"
     description:
       path: core
-      ref: "v0.0.1"
-      resolved-ref: ceebe2da5338160714cccd76cacc468f08272ee5
-      url: "git@github.com:josephgcedeno/widgetbook-mono-repo.git"
+      ref: "v1.6.0"
+      resolved-ref: "87934bfde975e6edd4eb35fab3bded4b1fdbca58"
+      url: "git@github.com:Nuxify/widgetbook.git"
     source: git
     version: "1.5.0"
   nuxify_widgetbook_qr_scanner:
     dependency: "direct main"
     description:
       path: qr_scanner
-      ref: "v0.0.1"
-      resolved-ref: ceebe2da5338160714cccd76cacc468f08272ee5
-      url: "git@github.com:josephgcedeno/widgetbook-mono-repo.git"
+      ref: "v1.6.0"
+      resolved-ref: "87934bfde975e6edd4eb35fab3bded4b1fdbca58"
+      url: "git@github.com:Nuxify/widgetbook.git"
     source: git
     version: "1.5.0"
   package_config:
