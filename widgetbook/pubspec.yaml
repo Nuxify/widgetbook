@@ -13,12 +13,12 @@ dependencies:
   widgetbook_annotation: ^3.1.0
   nuxify_widgetbook_core:
     git:
-      url: git@github.com:Nuxify/widgetbook.git
+      url: https://github.com/Nuxify/widgetbook.git
       path: core
       ref: v1.6.0
   nuxify_widgetbook_qr_scanner:
     git:
-      url: git@github.com:Nuxify/widgetbook.git
+      url: https://github.com/Nuxify/widgetbook.git
       path: qr_scanner
       ref: v1.6.0
 
