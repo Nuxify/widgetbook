@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/indicators/empty_view_placeholder.dart';
+import 'package:nuxify_widgetbook_core/indicators/empty_view_placeholder.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/navigation/app_bottom_navigation.dart';
+import 'package:nuxify_widgetbook_core/navigation/app_bottom_navigation.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 

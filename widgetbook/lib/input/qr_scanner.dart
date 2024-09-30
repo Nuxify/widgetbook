@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/src/objects/barcode_capture.dart';
-import 'package:nuxify_widgetbook/input/qr_scanner.dart';
+import 'package:nuxify_widgetbook_qr_scanner/input/qr_scanner.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
