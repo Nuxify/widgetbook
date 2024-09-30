@@ -10,13 +10,13 @@ packages:
     source: hosted
     version: "67.0.0"
   accessibility_tools:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: accessibility_tools
-      sha256: "0a16adc8dfa3a7ebd38775135d86443011a65d4ecbb438913e4992b5d29135fe"
+      sha256: deca88d9f181ad6fdd12df9c5fa952c763264da14336ca1c0e4124525725b174
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0"
+    version: "1.0.1"
   analyzer:
     dependency: transitive
     description:
@@ -230,14 +230,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
-  flutter_svg:
-    dependency: transitive
-    description:
-      name: flutter_svg
-      sha256: "7b4ca6cf3304575fe9c8ec64813c8d02ee41d2afe60bcfe0678bcb5375d596a2"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.10+1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -252,10 +244,10 @@ packages:
     dependency: transitive
     description:
       name: freezed_annotation
-      sha256: c3fd9336eb55a38cc1bbd79ab17573113a8deccd0ecbbf926cca3c62803b5c2d
+      sha256: c2e2d632dd9b8a2b7751117abcfc2b4888ecfe181bd9fca7170d9ef02e595fe2
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.1"
+    version: "2.4.4"
   frontend_server_client:
     dependency: transitive
     description:
@@ -280,14 +272,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
-  http:
-    dependency: transitive
-    description:
-      name: http
-      sha256: "761a297c042deedc1ffbb156d6e2af13886bb305c2a343a4d972504cd67dd938"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.1"
   http_multi_server:
     dependency: transitive
     description:
@@ -404,18 +388,18 @@ packages:
     dependency: transitive
     description:
       name: mime
-      sha256: "2e123074287cc9fd6c09de8336dae606d1ddb88d9ac47358826db698c176a1f2"
+      sha256: "801fd0b26f14a4a58ccb09d5892c3fbdeff209594300a542492cf13fba9d247a"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "1.0.6"
   mobile_scanner:
     dependency: transitive
     description:
       name: mobile_scanner
-      sha256: "4e30d37fac883fd7c1649ccca76f7e0993aaf2d10dfb681524c4e3451b8e3835"
+      sha256: b8c0e9afcfd52534f85ec666f3d52156f560b5e6c25b1e3d4fe2087763607926
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.0"
+    version: "5.1.1"
   mocktail:
     dependency: "direct dev"
     description:
@@ -440,13 +424,24 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.2"
-  nuxify_widgetbook:
+  nuxify_widgetbook_core:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.1.0"
+      path: core
+      ref: "v0.0.1"
+      resolved-ref: ceebe2da5338160714cccd76cacc468f08272ee5
+      url: "git@github.com:josephgcedeno/widgetbook-mono-repo.git"
+    source: git
+    version: "1.5.0"
+  nuxify_widgetbook_qr_scanner:
+    dependency: "direct main"
+    description:
+      path: qr_scanner
+      ref: "v0.0.1"
+      resolved-ref: ceebe2da5338160714cccd76cacc468f08272ee5
+      url: "git@github.com:josephgcedeno/widgetbook-mono-repo.git"
+    source: git
+    version: "1.5.0"
   package_config:
     dependency: transitive
     description:
@@ -463,22 +458,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
-  path_parsing:
-    dependency: transitive
-    description:
-      name: path_parsing
-      sha256: e3e67b1629e6f7e8100b367d3db6ba6af4b1f0bb80f64db18ef1fbabd2fa9ccf
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
-  petitparser:
-    dependency: transitive
-    description:
-      name: petitparser
-      sha256: c15605cd28af66339f8eb6fbe0e541bfe2d1b72d5825efc6598f3e0a31b9ad27
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.0.2"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -507,10 +486,10 @@ packages:
     dependency: transitive
     description:
       name: pubspec_parse
-      sha256: c63b2876e58e194e4b0828fcb080ad0e06d051cb607a6be51a9e084f47cb9367
+      sha256: c799b721d79eb6ee6fa56f00c04b472dcd44a30d258fac2174a6ec57302678f8
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.3"
+    version: "1.3.0"
   resizable_widget:
     dependency: transitive
     description:
@@ -539,10 +518,10 @@ packages:
     dependency: transitive
     description:
       name: shelf_static
-      sha256: a41d3f53c4adf0f57480578c1d61d90342cd617de7fc8077b1304643c2d85c1e
+      sha256: c87c3875f91262785dade62d135760c2c69cb217ac759485334c5857ad89f6e3
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.2"
+    version: "1.1.3"
   shelf_web_socket:
     dependency: transitive
     description:
@@ -551,6 +530,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  shimmer:
+    dependency: transitive
+    description:
+      name: shimmer
+      sha256: "5f88c883a22e9f9f299e5ba0e4f7e6054857224976a5d9f839d4ebdc94a14ac9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -568,10 +555,10 @@ packages:
     dependency: transitive
     description:
       name: source_map_stack_trace
-      sha256: "84cf769ad83aa6bb61e0aa5a18e53aea683395f196a6f39c4c881fb90ed4f7ae"
+      sha256: c0713a43e323c3302c2abe2a1cc89aa057a387101ebd280371d6a6c9fa68516b
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   source_maps:
     dependency: transitive
     description:
@@ -668,30 +655,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
-  vector_graphics:
-    dependency: transitive
-    description:
-      name: vector_graphics
-      sha256: "32c3c684e02f9bc0afb0ae0aa653337a2fe022e8ab064bcd7ffda27a74e288e3"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.11+1"
-  vector_graphics_codec:
-    dependency: transitive
-    description:
-      name: vector_graphics_codec
-      sha256: c86987475f162fadff579e7320c7ddda04cd2fdeffbe1129227a85d9ac9e03da
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.11+1"
-  vector_graphics_compiler:
-    dependency: transitive
-    description:
-      name: vector_graphics_compiler
-      sha256: "12faff3f73b1741a36ca7e31b292ddeb629af819ca9efe9953b70bd63fc8cd81"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.11+1"
   vector_math:
     dependency: transitive
     description:
@@ -744,34 +707,26 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: be0588cd864a70bd2817ca2fab0dbd147c460b712cfe53fd13e6fd46b5c3f368
+      sha256: "4db3ab02c3159dd898b362c8681b9cdabda33caae3a9d13e3fc71231a485ad33"
       url: "https://pub.dev"
     source: hosted
-    version: "3.7.1"
+    version: "3.9.0"
   widgetbook_annotation:
     dependency: "direct main"
     description:
       name: widgetbook_annotation
-      sha256: c2d881d0241525b36aa3777d0ac406d198528ed28b84ca73b7dd9f59189d6bb0
+      sha256: "08570e3568275c4c283cdf78409c125f86c96c9b4f94f0a390d6a163349e9934"
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.0"
+    version: "3.2.0"
   widgetbook_generator:
     dependency: "direct dev"
     description:
       name: widgetbook_generator
-      sha256: d81512780bb4d137d59f0694328f446433fe5228cf8191e918046cc4f09c128b
+      sha256: "5967de405c3e7e3d4ef56239c7b23f0affd69b181f7d041f8101f0fbdb9d4e2c"
       url: "https://pub.dev"
     source: hosted
-    version: "3.7.0"
-  xml:
-    dependency: transitive
-    description:
-      name: xml
-      sha256: b015a8ad1c488f66851d762d3090a21c600e479dc75e68328c52774040cf9226
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.5.0"
+    version: "3.9.0"
   yaml:
     dependency: transitive
     description:

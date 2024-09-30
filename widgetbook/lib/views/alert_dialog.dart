@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nuxify_widgetbook/views/alert_dialog.dart';
+import 'package:nuxify_widgetbook_core/views/alert_dialog.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-import 'package:nuxify_widgetbook/test/main_test.dart';
-import 'package:nuxify_widgetbook/test/observer_tester.dart';
+import 'package:nuxify_widgetbook_core/test/main_test.dart';
+import 'package:nuxify_widgetbook_core/test/observer_tester.dart';
 
 @widgetbook.UseCase(name: 'Default', type: AppAlertDialog)
 Widget defaultUseCase(BuildContext context) {

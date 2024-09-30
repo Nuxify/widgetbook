@@ -11,8 +11,19 @@ dependencies:
     sdk: flutter
   widgetbook: ^3.7.1
   widgetbook_annotation: ^3.1.0
-  nuxify_widgetbook:
-    path: ../
+  nuxify_widgetbook_core:
+    git:
+      url: git@github.com:Nuxify/widgetbook.git
+      path: core
+      ref: v0.0.1
+  nuxify_widgetbook_qr_scanner:
+    git:
+      url: git@github.com:Nuxify/widgetbook.git
+      path: qr_scanner
+      ref: v0.0.1
+
+dependency_overrides:
+  accessibility_tools: ^1.0.0
 
 dev_dependencies:
   flutter_test:
