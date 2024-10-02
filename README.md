@@ -18,6 +18,10 @@ nuxify_widgetbook_qr_scanner:
     ref: v1.6.0
 ```
 
+### View the WidgetBook Online
+
+You can explore and interact with all available widgets through our web interface at **[widgetbook.nuxify.tech](https://widgetbook.nuxify.tech/)**.
+
 ## Buttons
 
 -   **Action Button:**  
