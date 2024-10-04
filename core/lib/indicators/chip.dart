@@ -10,17 +10,21 @@ class ChipIndicator extends StatelessWidget {
   /// [backgroundColor] The background color of the chip. If not provided, it will default to a slightly transparent version of the theme's primary color.
   ///
   /// [padding] The padding around the child widget. It defaults to EdgeInsets.symmetric(horizontal: 15, vertical: 4).
+  ///
+  /// [borderColor] Provide optional border color for the chip
   const ChipIndicator({
     required this.child,
     this.onTap,
     this.backgroundColor,
     this.padding = const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+    this.borderColor,
     super.key,
   });
   final Widget child;
   final void Function()? onTap;
   final Color? backgroundColor;
   final EdgeInsetsGeometry padding;
+  final Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +36,7 @@ class ChipIndicator extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor ??
               Theme.of(context).primaryColor.withOpacity(0.1),
+          border: borderColor != null ? Border.all(color: borderColor!) : null,
           borderRadius: BorderRadius.circular(20),
         ),
         padding: padding,
