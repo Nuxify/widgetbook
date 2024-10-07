@@ -7,44 +7,28 @@ import 'package:shimmer/shimmer.dart';
 
 const Duration fadeInDuration = Duration(milliseconds: 500);
 
-class CardExpandedLoader extends StatelessWidget {
-  const CardExpandedLoader({
-    required this.height,
-    this.baseColor = const Color(0xFF607D8B),
-    this.highlightColor = const Color(0xFFCFD8DC),
-    super.key,
-  });
-  final double height;
-  final Color baseColor;
-  final Color highlightColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return Shimmer.fromColors(
-      baseColor: baseColor,
-      highlightColor: highlightColor,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          color: baseColor.withOpacity(0.1),
-        ),
-        margin: const EdgeInsets.only(right: 8),
-        height: height,
-      ),
-    );
-  }
-}
-
+/// This is a custom widget for a card loader.
+/// It takes a required height and an optional width.
+/// The default width is expanded.
+/// The base color and highlight color can also be customized.
+///
+/// The [height] parameter is required and specifies the height of the loader.
+///
+/// The [width] parameter is optional and specifies the width of the loader.
+///
+/// The [baseColor] parameter customizes the base color of the loader, defaulting to a shade of blue.
+///
+/// The [highlightColor] parameter customizes the highlight color of the loader, defaulting to a lighter shade of blue.
 class CardLoader extends StatelessWidget {
   const CardLoader({
     required this.height,
-    required this.width,
+    this.width,
     this.baseColor = const Color(0xFF607D8B),
     this.highlightColor = const Color(0xFFCFD8DC),
     super.key,
   });
   final double height;
-  final double width;
+  final double? width;
   final Color baseColor;
   final Color highlightColor;
 
