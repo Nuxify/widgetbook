@@ -24,6 +24,14 @@ Widget defaultUseCase(BuildContext context) {
         label: 'Active Color',
         initialValue: Colors.green,
       ),
+      activeBorderColor: context.knobs.color(
+        label: 'Active Border Color',
+        initialValue: Colors.transparent,
+      ),
+      inactiveBorderColor: context.knobs.color(
+        label: 'Inctive Border Color',
+        initialValue: Colors.transparent,
+      ),
       inactiveColor: context.knobs.color(
         label: 'Inctive Color',
         initialValue: Colors.grey,
