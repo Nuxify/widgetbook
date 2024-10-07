@@ -21,6 +21,10 @@ class ChipsSelection extends StatelessWidget {
   /// [onTap] A callback function that is called when a chip is tapped. It takes the index of the tapped chip as a parameter.
   ///
   /// [spacing] The spacing between the chips in the row. Default value is 2.
+  ///
+  /// [activeBorderColor] The border color of the active chips. If not provided, it uses the active color or the primary color from the current theme.
+  ///
+  /// [inactiveBorderColor] The border color of the inactive chips. If not provided, it uses the inactive color or a slightly transparent version of the primary color from the current theme.
   const ChipsSelection({
     required this.items,
     required this.activeIndexes,
@@ -28,6 +32,8 @@ class ChipsSelection extends StatelessWidget {
     this.inactiveColor,
     this.activeTextStyle,
     this.inactiveTextStyle,
+    this.activeBorderColor,
+    this.inactiveBorderColor,
     this.onTap,
     this.spacing = 2,
     super.key,
@@ -40,6 +46,8 @@ class ChipsSelection extends StatelessWidget {
   final TextStyle? inactiveTextStyle;
   final void Function(int index)? onTap;
   final double spacing;
+  final Color? activeBorderColor;
+  final Color? inactiveBorderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +60,9 @@ class ChipsSelection extends StatelessWidget {
               padding: EdgeInsets.only(right: spacing),
               child: ChipIndicator(
                 onTap: () => onTap?.call(i),
+                borderColor: activeIndexes.contains(i)
+                    ? activeBorderColor
+                    : inactiveBorderColor,
                 backgroundColor: activeIndexes.contains(i)
                     ? activeColor ?? Theme.of(context).primaryColor
                     : inactiveColor ??
