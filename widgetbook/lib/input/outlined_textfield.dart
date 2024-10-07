@@ -27,6 +27,26 @@ Widget defaultUseCase(BuildContext context) {
               OutlinedTextField(
                 enabled:
                     context.knobs.boolean(label: 'Enabled', initialValue: true),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'This field is required';
+                  }
+                  return null;
+                },
+                autovalidateMode: context.knobs.list(
+                  label: 'Auto validate Mode',
+                  options: <AutovalidateMode>[
+                    AutovalidateMode.always,
+                    AutovalidateMode.onUserInteraction,
+                    AutovalidateMode.disabled,
+                  ],
+                  initialOption: AutovalidateMode.disabled,
+                ),
+                hintText: context.knobs
+                    .string(label: 'Hint Text', initialValue: 'Input here'),
+                hintStyle: TextStyle(
+                  color: Colors.white.withOpacity(0.5),
+                ),
                 borderColor: context.knobs.color(label: 'Border Color'),
                 errorBorderColor:
                     context.knobs.color(label: 'Error Border Color'),
@@ -61,8 +81,6 @@ Widget defaultUseCase(BuildContext context) {
                     FloatingLabelBehavior.never,
                   ],
                 ),
-                validator: (p0) => 'Error Text Sample',
-                labelText: context.knobs.string(label: 'Label Text'),
                 prefix: context.knobs.boolean(label: 'Display Suffix Widget')
                     ? const Icon(
                         Icons.search,

@@ -17,42 +17,58 @@ Widget defaultUseCase(BuildContext context) {
         max: width,
         min: width * 0.1,
       ),
-      child: Center(
-        child: FilledTextField(
-          controller: textEditingController,
-          isDense: context.knobs.boolean(label: 'TextField isDense'),
-          obscureText: context.knobs.boolean(label: 'TextField obscureText'),
-          fillColor: context.knobs.color(label: 'Fill Color'),
-          enabled: context.knobs.boolean(label: 'Enabled', initialValue: true),
-          borderRadius: context.knobs.double.slider(
-              label: 'Border Radius', initialValue: 30, max: 50, min: 1),
-          contentPadding: EdgeInsets.symmetric(
-            vertical: context.knobs.double.slider(
-                label: 'Content Padding Vertical',
-                initialValue: 10,
-                max: 50,
-                min: 1),
-            horizontal: context.knobs.double.slider(
-                label: 'Content Padding Horizontal',
-                initialValue: 20,
-                max: 50,
-                min: 1),
+      child: Form(
+        key: GlobalKey<FormState>(),
+        child: Center(
+          child: FilledTextField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'This field is required';
+              }
+              return null;
+            },
+            controller: textEditingController,
+            isDense: context.knobs.boolean(label: 'TextField isDense'),
+            obscureText: context.knobs.boolean(label: 'TextField obscureText'),
+            fillColor: context.knobs.color(label: 'Fill Color'),
+            enabled:
+                context.knobs.boolean(label: 'Enabled', initialValue: true),
+            borderRadius: context.knobs.double.slider(
+                label: 'Border Radius', initialValue: 30, max: 50, min: 1),
+            contentPadding: EdgeInsets.symmetric(
+              vertical: context.knobs.double.slider(
+                  label: 'Content Padding Vertical',
+                  initialValue: 10,
+                  max: 50,
+                  min: 1),
+              horizontal: 20,
+            ),
+            floatingLabelBehavior: context.knobs.list(
+              label: 'Floating Label Behavior',
+              options: <FloatingLabelBehavior>[
+                FloatingLabelBehavior.always,
+                FloatingLabelBehavior.auto,
+                FloatingLabelBehavior.never,
+              ],
+            ),
+            autovalidateMode: context.knobs.list(
+              label: 'Auto validate Mode',
+              options: <AutovalidateMode>[
+                AutovalidateMode.always,
+                AutovalidateMode.onUserInteraction,
+                AutovalidateMode.disabled,
+              ],
+              initialOption: AutovalidateMode.disabled,
+            ),
+            hintText: context.knobs
+                .string(label: 'Hint Text', initialValue: 'Input here'),
+            prefix: context.knobs.boolean(label: 'Display Suffix Widget')
+                ? const Icon(Icons.search)
+                : null,
+            suffix: context.knobs.boolean(label: 'Display Prefix Widget')
+                ? const Icon(Icons.date_range)
+                : null,
           ),
-          floatingLabelBehavior: context.knobs.list(
-            label: 'Floating Label Behavior',
-            options: <FloatingLabelBehavior>[
-              FloatingLabelBehavior.always,
-              FloatingLabelBehavior.auto,
-              FloatingLabelBehavior.never,
-            ],
-          ),
-          labelText: context.knobs.string(label: 'Label Text'),
-          prefix: context.knobs.boolean(label: 'Display Suffix Widget')
-              ? const Icon(Icons.search)
-              : null,
-          suffix: context.knobs.boolean(label: 'Display Prefix Widget')
-              ? const Icon(Icons.date_range)
-              : null,
         ),
       ),
     ),
