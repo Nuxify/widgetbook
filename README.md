@@ -50,7 +50,9 @@ You can explore and interact with all available widgets through our web interfac
     
 -   **Avatar (with fallback initials):**  
     Use `CircleAvatar()` to display a profile image or fallback initials if no image is available.
-    
+
+-   **CardLoader:**  
+    Use `CardLoader()` to create a customizable skeleton loader for card-like UI elements. It allows you to specify the height and width, with default values for base and highlight colors.  
 
 ## Textfields & Inputs
 
