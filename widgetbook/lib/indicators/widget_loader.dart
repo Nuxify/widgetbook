@@ -3,7 +3,7 @@ import 'package:nuxify_widgetbook_core/indicators/widget_loader.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
-@widgetbook.UseCase(name: 'Default', type: CardExpandedLoader)
+@widgetbook.UseCase(name: 'Default', type: CardLoader)
 Widget defaultUseCase(BuildContext context) {
   final int itemCount =
       context.knobs.int.slider(label: 'Loader Count', initialValue: 3, max: 10);
@@ -22,7 +22,7 @@ Widget defaultUseCase(BuildContext context) {
             for (int j = 0; j < itemCount; j++)
               Padding(
                 padding: const EdgeInsets.only(bottom: 10.0),
-                child: CardExpandedLoader(
+                child: CardLoader(
                   height: context.knobs.double
                       .input(label: 'Card Loader Height', initialValue: 50),
                 ),
