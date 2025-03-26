@@ -55,10 +55,12 @@ class FilledTextField extends StatelessWidget {
   /// [readOnly] Whether the text field is read-only.
   ///
   /// [onTap] A callback that is called when the text field is tapped.
-  /// 
+  ///
   /// [keyboardType] Whether the keyboard layout uses num pad or alphabets
   ///
   /// [autovalidateMode] Determine if input user is valid according to set mode
+  ///
+  /// [textCapitalization] Text capitalization (apple / Apple)
   const FilledTextField({
     this.controller,
     this.fillColor,
@@ -90,6 +92,7 @@ class FilledTextField extends StatelessWidget {
     this.keyboardType,
     this.autovalidateMode,
     this.onTap,
+    this.textCapitalization = TextCapitalization.none,
     super.key,
   });
   final Color? fillColor;
@@ -120,6 +123,7 @@ class FilledTextField extends StatelessWidget {
   final Function()? onTap;
   final TextInputType? keyboardType;
   final AutovalidateMode? autovalidateMode;
+  final TextCapitalization textCapitalization;
 
   @override
   Widget build(BuildContext context) {
@@ -138,6 +142,7 @@ class FilledTextField extends StatelessWidget {
       inputFormatters: inputFormatters,
       keyboardType: keyboardType,
       autovalidateMode: autovalidateMode,
+      textCapitalization: textCapitalization,
       decoration: InputDecoration(
         enabled: enabled,
         prefixIcon: prefix,
