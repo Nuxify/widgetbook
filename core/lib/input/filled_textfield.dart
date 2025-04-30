@@ -93,6 +93,7 @@ class FilledTextField extends StatelessWidget {
     this.autovalidateMode,
     this.onTap,
     this.textCapitalization = TextCapitalization.none,
+    this.onChanged,
     super.key,
   });
   final Color? fillColor;
@@ -124,6 +125,7 @@ class FilledTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final AutovalidateMode? autovalidateMode;
   final TextCapitalization textCapitalization;
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -143,6 +145,7 @@ class FilledTextField extends StatelessWidget {
       keyboardType: keyboardType,
       autovalidateMode: autovalidateMode,
       textCapitalization: textCapitalization,
+      onChanged: onChanged,
       decoration: InputDecoration(
         enabled: enabled,
         prefixIcon: prefix,
