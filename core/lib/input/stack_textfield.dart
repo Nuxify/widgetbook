@@ -173,7 +173,7 @@ class _StackTextFieldState extends State<StackTextField> {
                   hintText: widget.hintText,
                   hintStyle: TextStyle(
                     color: widget.labelColor ??
-                        theme.colorScheme.primary.withOpacity(0.7),
+                        theme.colorScheme.primary.withValues(alpha: 0.7),
                   ),
                   suffixText: widget.suffixText,
                   prefixIcon: widget.prefixIcon,
@@ -206,7 +206,7 @@ class _StackTextFieldState extends State<StackTextField> {
               style: TextStyle(
                 fontSize: 10,
                 color: widget.labelColor ??
-                    theme.colorScheme.primary.withOpacity(0.7),
+                    theme.colorScheme.primary.withValues(alpha: 0.7),
               ),
             ),
           )

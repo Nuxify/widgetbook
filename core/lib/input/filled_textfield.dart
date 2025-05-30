@@ -60,6 +60,12 @@ class FilledTextField extends StatelessWidget {
   ///
   /// [autovalidateMode] Determine if input user is valid according to set mode
   ///
+  /// [isOutlined] Determine if the textfield is outlined
+  ///
+  /// [borderColor] Optional color for border color of outline
+  ///
+  /// [focusedBorderColor] Optional color for focus border
+  /// 
   /// [textCapitalization] Text capitalization (apple / Apple)
   const FilledTextField({
     this.controller,
@@ -92,6 +98,9 @@ class FilledTextField extends StatelessWidget {
     this.keyboardType,
     this.autovalidateMode,
     this.onTap,
+    this.isOutlined = false,
+    this.borderColor,
+    this.focusedBorderColor = Colors.black,
     this.textCapitalization = TextCapitalization.none,
     this.onChanged,
     super.key,
@@ -124,6 +133,9 @@ class FilledTextField extends StatelessWidget {
   final Function()? onTap;
   final TextInputType? keyboardType;
   final AutovalidateMode? autovalidateMode;
+  final bool isOutlined;
+  final Color? borderColor;
+  final Color focusedBorderColor;
   final TextCapitalization textCapitalization;
   final void Function(String)? onChanged;
 
@@ -156,13 +168,27 @@ class FilledTextField extends StatelessWidget {
         labelText: labelText,
         labelStyle: labelStyle,
         floatingLabelBehavior: floatingLabelBehavior,
-        filled: true,
+        filled: isOutlined && fillColor == null ? false : true,
         isDense: isDense,
-        fillColor: fillColor ?? Colors.black.withOpacity(0.05),
+        fillColor: fillColor ?? Colors.black.withValues(alpha: 0.1),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: BorderSide.none,
         ),
+        enabledBorder: isOutlined
+            ? OutlineInputBorder(
+                borderRadius: BorderRadius.circular(borderRadius),
+                borderSide: isOutlined
+                    ? BorderSide(color: borderColor ?? Colors.black26)
+                    : BorderSide.none,
+              )
+            : null,
+        focusedBorder: isOutlined
+            ? OutlineInputBorder(
+                borderRadius: BorderRadius.circular(borderRadius),
+                borderSide: BorderSide(color: focusedBorderColor),
+              )
+            : null,
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: BorderSide(color: errorBorderColor, width: 1),

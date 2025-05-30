@@ -35,7 +35,7 @@ class ChipIndicator extends StatelessWidget {
         duration: const Duration(milliseconds: 100),
         decoration: BoxDecoration(
           color: backgroundColor ??
-              Theme.of(context).primaryColor.withOpacity(0.1),
+              Theme.of(context).primaryColor.withValues(alpha: 0.1),
           border: borderColor != null ? Border.all(color: borderColor!) : null,
           borderRadius: BorderRadius.circular(20),
         ),

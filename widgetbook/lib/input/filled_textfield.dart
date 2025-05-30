@@ -7,6 +7,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 Widget defaultUseCase(BuildContext context) {
   final double width = MediaQuery.of(context).size.width;
   final TextEditingController textEditingController = TextEditingController();
+  final bool isOutlined = context.knobs.boolean(label: 'Is Outlined');
   return Container(
     width: double.infinity,
     alignment: Alignment.center,
@@ -28,9 +29,50 @@ Widget defaultUseCase(BuildContext context) {
               return null;
             },
             controller: textEditingController,
+            isOutlined: isOutlined,
             isDense: context.knobs.boolean(label: 'TextField isDense'),
             obscureText: context.knobs.boolean(label: 'TextField obscureText'),
-            fillColor: context.knobs.color(label: 'Fill Color'),
+            fillColor: context.knobs.color(
+              label: 'Fill Color',
+              initialValue: isOutlined ? Colors.transparent : Colors.white,
+            ),
+            borderColor: isOutlined
+                ? context.knobs.color(
+                    label: 'Border Color',
+                    initialValue: Colors.white,
+                  )
+                : null,
+            focusedBorderColor: isOutlined
+                ? context.knobs.color(
+                    label: 'Border Color',
+                    initialValue: Colors.white,
+                  )
+                : Colors.black,
+            textStyle: TextStyle(
+              color: isOutlined
+                  ? context.knobs.color(
+                      label: 'Text Color',
+                      initialValue: Colors.white,
+                    )
+                  : Colors.black,
+            ),
+            textCapitalization: context.knobs.list(
+              label: 'Text Capitalization',
+              options: [
+                TextCapitalization.characters,
+                TextCapitalization.none,
+                TextCapitalization.sentences,
+                TextCapitalization.words,
+              ],
+            ),
+            hintStyle: TextStyle(
+              color: isOutlined
+                  ? context.knobs.color(
+                      label: 'Hint Text Color',
+                      initialValue: Colors.white,
+                    )
+                  : Colors.black,
+            ),
             enabled:
                 context.knobs.boolean(label: 'Enabled', initialValue: true),
             borderRadius: context.knobs.double.slider(

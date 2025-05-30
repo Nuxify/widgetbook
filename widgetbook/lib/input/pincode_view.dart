@@ -9,7 +9,7 @@ Widget defaultUseCase(BuildContext context) {
   return MaterialApp(
     theme: ThemeData(
       colorScheme: const ColorScheme.light().copyWith(
-        background: context.knobs.color(
+        surface: context.knobs.color(
           label: 'Keypad Background Color',
           initialValue: Colors.white10,
         ),
