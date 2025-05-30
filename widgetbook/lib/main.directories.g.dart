@@ -17,14 +17,13 @@ import 'package:widgetbook_workspace/indicators/empty_view_placeholder.dart'
 import 'package:widgetbook_workspace/indicators/horizontal_stepper.dart' as _i6;
 import 'package:widgetbook_workspace/indicators/widget_loader.dart' as _i2;
 import 'package:widgetbook_workspace/input/filled_textfield.dart' as _i7;
-import 'package:widgetbook_workspace/input/outlined_textfield.dart' as _i8;
-import 'package:widgetbook_workspace/input/pincode_view.dart' as _i9;
-import 'package:widgetbook_workspace/input/qr_scanner.dart' as _i10;
-import 'package:widgetbook_workspace/input/stack_textfield.dart' as _i11;
+import 'package:widgetbook_workspace/input/pincode_view.dart' as _i8;
+import 'package:widgetbook_workspace/input/qr_scanner.dart' as _i9;
+import 'package:widgetbook_workspace/input/stack_textfield.dart' as _i10;
 import 'package:widgetbook_workspace/navigation/app_bottom_navigation.dart'
-    as _i12;
-import 'package:widgetbook_workspace/views/alert_dialog.dart' as _i13;
-import 'package:widgetbook_workspace/views/bottomsheet.dart' as _i14;
+    as _i11;
+import 'package:widgetbook_workspace/views/alert_dialog.dart' as _i12;
+import 'package:widgetbook_workspace/views/bottomsheet.dart' as _i13;
 
 final directories = <_i1.WidgetbookNode>[
   _i1.WidgetbookFolder(
@@ -78,31 +77,24 @@ final directories = <_i1.WidgetbookNode>[
         ),
       ),
       _i1.WidgetbookLeafComponent(
-        name: 'OutlinedTextField',
+        name: 'PincodeView',
         useCase: _i1.WidgetbookUseCase(
           name: 'Default',
           builder: _i8.defaultUseCase,
         ),
       ),
       _i1.WidgetbookLeafComponent(
-        name: 'PincodeView',
+        name: 'QRScanner',
         useCase: _i1.WidgetbookUseCase(
           name: 'Default',
           builder: _i9.defaultUseCase,
         ),
       ),
       _i1.WidgetbookLeafComponent(
-        name: 'QRScanner',
-        useCase: _i1.WidgetbookUseCase(
-          name: 'Default',
-          builder: _i10.defaultUseCase,
-        ),
-      ),
-      _i1.WidgetbookLeafComponent(
         name: 'StackTextField',
         useCase: _i1.WidgetbookUseCase(
           name: 'Default',
-          builder: _i11.defaultUseCase,
+          builder: _i10.defaultUseCase,
         ),
       ),
     ],
@@ -114,7 +106,7 @@ final directories = <_i1.WidgetbookNode>[
         name: 'AppBottomNavigation',
         useCase: _i1.WidgetbookUseCase(
           name: 'Default',
-          builder: _i12.defaultUseCase,
+          builder: _i11.defaultUseCase,
         ),
       )
     ],
@@ -126,14 +118,14 @@ final directories = <_i1.WidgetbookNode>[
         name: 'AppAlertDialog',
         useCase: _i1.WidgetbookUseCase(
           name: 'Default',
-          builder: _i13.defaultUseCase,
+          builder: _i12.defaultUseCase,
         ),
       ),
       _i1.WidgetbookLeafComponent(
         name: 'AppBottomsheet',
         useCase: _i1.WidgetbookUseCase(
           name: 'Default',
-          builder: _i14.defaultUseCase,
+          builder: _i13.defaultUseCase,
         ),
       ),
     ],

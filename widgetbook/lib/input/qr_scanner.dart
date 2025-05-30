@@ -1,10 +1,10 @@
 // ignore_for_file: depend_on_referenced_packages, implementation_imports
 
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/src/objects/barcode_capture.dart';
 import 'package:nuxify_widgetbook_qr_scanner/input/qr_scanner.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+import 'package:mobile_scanner/mobile_scanner.dart';
 
 @widgetbook.UseCase(name: 'Default', type: QRScanner)
 Widget defaultUseCase(BuildContext context) {
@@ -22,6 +22,8 @@ class _QRScanner extends StatefulWidget {
 
 class __QRScannerState extends State<_QRScanner> {
   String detectedValue = '';
+
+  final MobileScannerController controller = MobileScannerController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,7 @@ class __QRScannerState extends State<_QRScanner> {
               label: 'Indicator Inactive Color',
               initialValue: Colors.orange,
             ),
+            controller: controller,
           ),
         ),
         if (detectedValue.isNotEmpty)
