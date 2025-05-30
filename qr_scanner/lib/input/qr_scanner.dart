@@ -12,17 +12,20 @@ class QRScanner extends StatelessWidget {
   const QRScanner({
     required this.onDetect,
     required this.borderColor,
+    required this.controller,
     this.borderWidth = 7,
     super.key,
   });
   final double borderWidth;
   final Color borderColor;
   final void Function(BarcodeCapture)? onDetect;
+  final MobileScannerController controller;
 
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
+
     return Container(
       padding: EdgeInsets.only(top: height * 0.02),
       height: width >= 1024 ? height * 0.24 : height * 0.36,
@@ -40,10 +43,7 @@ class QRScanner extends StatelessWidget {
             child: AspectRatio(
               aspectRatio: 1,
               child: MobileScanner(
-                controller: MobileScannerController(
-                  detectionSpeed: DetectionSpeed.normal,
-                  autoStart: true,
-                ),
+                controller: controller,
                 onDetect: onDetect,
               ),
             ),

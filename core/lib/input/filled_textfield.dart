@@ -65,6 +65,8 @@ class FilledTextField extends StatelessWidget {
   /// [borderColor] Optional color for border color of outline
   ///
   /// [focusedBorderColor] Optional color for focus border
+  /// 
+  /// [textCapitalization] Text capitalization (apple / Apple)
   const FilledTextField({
     this.controller,
     this.fillColor,
@@ -99,6 +101,8 @@ class FilledTextField extends StatelessWidget {
     this.isOutlined = false,
     this.borderColor,
     this.focusedBorderColor = Colors.black,
+    this.textCapitalization = TextCapitalization.none,
+    this.onChanged,
     super.key,
   });
   final Color? fillColor;
@@ -132,6 +136,8 @@ class FilledTextField extends StatelessWidget {
   final bool isOutlined;
   final Color? borderColor;
   final Color focusedBorderColor;
+  final TextCapitalization textCapitalization;
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -150,6 +156,8 @@ class FilledTextField extends StatelessWidget {
       inputFormatters: inputFormatters,
       keyboardType: keyboardType,
       autovalidateMode: autovalidateMode,
+      textCapitalization: textCapitalization,
+      onChanged: onChanged,
       decoration: InputDecoration(
         enabled: enabled,
         prefixIcon: prefix,

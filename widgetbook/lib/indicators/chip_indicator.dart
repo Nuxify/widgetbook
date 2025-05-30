@@ -12,6 +12,10 @@ Widget defaultUseCase(BuildContext context) {
         label: 'Color',
         initialValue: Theme.of(context).primaryColor,
       ),
+      borderColor: context.knobs.color(
+        label: 'Border Color',
+        initialValue: Colors.transparent,
+      ),
       padding: EdgeInsets.fromLTRB(
         context.knobs.double.slider(
           label: 'Left Padding',
