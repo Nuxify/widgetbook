@@ -12,15 +12,19 @@ dependencies:
   widgetbook: ^3.14.2
   widgetbook_annotation: ^3.5.0
   nuxify_widgetbook_core:
-    git:
-      url: https://github.com/Nuxify/widgetbook.git
-      path: core
-      ref: v1.7.0
+    path: ../core
+    # temporarily use path to import new params
+    # git:
+    #   url: https://github.com/Nuxify/widgetbook.git
+    #   path: core
+    #   ref: v1.6.0
   nuxify_widgetbook_qr_scanner:
-    git:
-      url: https://github.com/Nuxify/widgetbook.git
-      path: qr_scanner
-      ref: v1.6.0
+    path: ../qr_scanner
+    # temporarily use path to import new params
+    # git:
+    #   url: https://github.com/Nuxify/widgetbook.git
+    #   path: qr_scanner
+    #   ref: v1.6.0
 
 dependency_overrides:
   accessibility_tools: ^1.0.0
