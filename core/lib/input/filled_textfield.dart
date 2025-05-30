@@ -150,7 +150,7 @@ class FilledTextField extends StatelessWidget {
         floatingLabelBehavior: floatingLabelBehavior,
         filled: true,
         isDense: isDense,
-        fillColor: fillColor ?? Colors.black.withOpacity(0.05),
+        fillColor: fillColor ?? Colors.black.withValues(alpha: 0.1),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: BorderSide.none,

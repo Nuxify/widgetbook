@@ -59,11 +59,13 @@ void main() {
       final BoxDecoration decoration3 =
           chip3Container.decoration as BoxDecoration;
       expect(
-          decoration1.color, equals(const Color(0x1a6750a4).withOpacity(0.1)));
-      expect(
-          decoration2.color, equals(const Color(0x1a6750a4).withOpacity(0.1)));
-      expect(
-          decoration3.color, equals(const Color(0x1a6750a4).withOpacity(0.1)));
+        decoration1.color,
+        equals(const Color(0x1a6750a4).withValues(alpha: 0.1)),
+      );
+      expect(decoration2.color,
+          equals(const Color(0x1a6750a4).withValues(alpha: 0.1)));
+      expect(decoration3.color,
+          equals(const Color(0x1a6750a4).withValues(alpha: 0.1)));
     });
 
     testWidgets('Active Chip test', (WidgetTester tester) async {

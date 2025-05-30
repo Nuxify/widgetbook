@@ -66,7 +66,7 @@ class ChipsSelection extends StatelessWidget {
                 backgroundColor: activeIndexes.contains(i)
                     ? activeColor ?? Theme.of(context).primaryColor
                     : inactiveColor ??
-                        Theme.of(context).primaryColor.withOpacity(0.1),
+                        Theme.of(context).primaryColor.withValues(alpha: 0.1),
                 child: Text(
                   items[i],
                   style: activeIndexes.contains(i)

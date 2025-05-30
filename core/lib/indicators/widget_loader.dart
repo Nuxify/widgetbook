@@ -40,7 +40,7 @@ class CardLoader extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: baseColor.withOpacity(0.1),
+          color: baseColor.withValues(alpha: 0.1),
         ),
         margin: const EdgeInsets.only(right: 8),
         height: height,

@@ -56,7 +56,8 @@ void main() {
       final textField = tester.widget<TextField>(find.byType(TextField));
       final decoration = textField.decoration as InputDecoration;
 
-      expect(decoration.fillColor, equals(Colors.black.withOpacity(0.05)));
+      expect(
+          decoration.fillColor, equals(Colors.black.withValues(alpha: 0.05)));
     });
 
     testWidgets('Custom fill color test', (WidgetTester tester) async {

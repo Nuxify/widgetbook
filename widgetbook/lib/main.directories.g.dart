@@ -31,7 +31,7 @@ final directories = <_i1.WidgetbookNode>[
     name: 'indicators',
     children: [
       _i1.WidgetbookLeafComponent(
-        name: 'CardExpandedLoader',
+        name: 'CardLoader',
         useCase: _i1.WidgetbookUseCase(
           name: 'Default',
           builder: _i2.defaultUseCase,

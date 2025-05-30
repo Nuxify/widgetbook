@@ -173,7 +173,7 @@ class _Keypad extends StatelessWidget {
                     )
                   else
                     Material(
-                      color: Theme.of(context).colorScheme.background,
+                      color: Theme.of(context).colorScheme.surface,
                       child: InkWell(
                         onTap: () => input(keypadMatrix[i][j]),
                         child: Padding(
