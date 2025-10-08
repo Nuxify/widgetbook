@@ -67,6 +67,10 @@ class FilledTextField extends StatelessWidget {
   /// [focusedBorderColor] Optional color for focus border
   ///
   /// [textCapitalization] Text capitalization (apple / Apple)
+  ///
+  /// [enabledBorder] Optional enabled border customization
+  ///
+  /// [focusedBorder] Optional focused border customization
   const FilledTextField({
     this.controller,
     this.fillColor,
@@ -104,6 +108,8 @@ class FilledTextField extends StatelessWidget {
     this.textCapitalization = TextCapitalization.none,
     this.onChanged,
     this.borderSide = BorderSide.none,
+    this.enabledBorder,
+    this.focusedBorder,
     super.key,
   });
   final Color? fillColor;
@@ -140,6 +146,8 @@ class FilledTextField extends StatelessWidget {
   final TextCapitalization textCapitalization;
   final void Function(String)? onChanged;
   final BorderSide borderSide;
+  final InputBorder? enabledBorder;
+  final InputBorder? focusedBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -175,22 +183,27 @@ class FilledTextField extends StatelessWidget {
         fillColor: fillColor ?? Colors.black.withValues(alpha: 0.1),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: borderSide,
+          borderSide: borderSide.copyWith(
+            width: 1,
+          ),
         ),
         enabledBorder: isOutlined
             ? OutlineInputBorder(
                 borderRadius: BorderRadius.circular(borderRadius),
                 borderSide: isOutlined
-                    ? BorderSide(color: borderColor ?? Colors.black26)
+                    ? BorderSide(
+                        color: borderColor ?? Colors.black26,
+                        width: 1,
+                      )
                     : BorderSide.none,
               )
-            : null,
+            : enabledBorder,
         focusedBorder: isOutlined
             ? OutlineInputBorder(
                 borderRadius: BorderRadius.circular(borderRadius),
-                borderSide: BorderSide(color: focusedBorderColor),
+                borderSide: BorderSide(color: focusedBorderColor, width: 1),
               )
-            : null,
+            : focusedBorder,
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: BorderSide(color: errorBorderColor, width: 1),
