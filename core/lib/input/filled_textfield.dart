@@ -73,6 +73,8 @@ class FilledTextField extends StatelessWidget {
   /// [focusedBorder] Optional focused border customization
   ///
   /// [scrollPadding] is an optional padding that insets the scrollable area to avoid the text field.
+  /// 
+  /// [disabledBorder] Optional parameter for disable border
   const FilledTextField({
     this.controller,
     this.fillColor,
@@ -113,6 +115,7 @@ class FilledTextField extends StatelessWidget {
     this.enabledBorder,
     this.focusedBorder,
     this.scrollPadding,
+    this.disabledBorder,
     super.key,
   });
   final Color? fillColor;
@@ -152,6 +155,7 @@ class FilledTextField extends StatelessWidget {
   final InputBorder? enabledBorder;
   final InputBorder? focusedBorder;
   final EdgeInsets? scrollPadding;
+  final InputBorder? disabledBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -191,6 +195,7 @@ class FilledTextField extends StatelessWidget {
             width: 1,
           ),
         ),
+        disabledBorder: disabledBorder,
         enabledBorder: isOutlined
             ? OutlineInputBorder(
                 borderRadius: BorderRadius.circular(borderRadius),
