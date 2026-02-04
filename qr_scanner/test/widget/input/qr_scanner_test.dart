@@ -10,18 +10,18 @@ void main() {
     required void Function(BarcodeCapture)? onDetect,
     required Color borderColor,
     double borderWidth = 7,
-  }) async =>
-      tester.pumpWidget(
-        universalPumper(
-          Scaffold(
-            body: QRScanner(
-              onDetect: onDetect,
-              borderColor: borderColor,
-              borderWidth: borderWidth,
-            ),
-          ),
+  }) async => tester.pumpWidget(
+    universalPumper(
+      Scaffold(
+        body: QRScanner(
+          onDetect: onDetect,
+          borderColor: borderColor,
+          borderWidth: borderWidth,
+          controller: MobileScannerController(),
         ),
-      );
+      ),
+    ),
+  );
   testWidgets('QRScanner renders correctly', (WidgetTester tester) async {
     // Build a MaterialApp with QRScanner inside for testing
     await widgetPumper(tester, onDetect: (_) {}, borderColor: Colors.white);
@@ -37,8 +37,9 @@ void main() {
     await tester.pump();
     // Verify that the QRScanner is rendered
 
-    final QRScanner qrScanner =
-        tester.widget<QRScanner>(find.byType(QRScanner));
+    final QRScanner qrScanner = tester.widget<QRScanner>(
+      find.byType(QRScanner),
+    );
 
     expect(qrScanner.borderColor, equals(borderColor));
   });
