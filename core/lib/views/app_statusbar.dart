@@ -13,8 +13,8 @@ class AppStatusBar extends StatelessWidget implements PreferredSizeWidget {
     required this.brightness,
     this.backgroundColor,
     this.statusBarColor,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final Color? backgroundColor;
   final Color? statusBarColor;
   final Brightness brightness;
