@@ -56,7 +56,7 @@ Widget defaultUseCase(BuildContext context) {
                     )
                   : Colors.black,
             ),
-            textCapitalization: context.knobs.list(
+            textCapitalization: context.knobs.object.dropdown(
               label: 'Text Capitalization',
               options: [
                 TextCapitalization.characters,
@@ -73,19 +73,26 @@ Widget defaultUseCase(BuildContext context) {
                     )
                   : Colors.black,
             ),
-            enabled:
-                context.knobs.boolean(label: 'Enabled', initialValue: true),
+            enabled: context.knobs.boolean(
+              label: 'Enabled',
+              initialValue: true,
+            ),
             borderRadius: context.knobs.double.slider(
-                label: 'Border Radius', initialValue: 30, max: 50, min: 1),
+              label: 'Border Radius',
+              initialValue: 30,
+              max: 50,
+              min: 1,
+            ),
             contentPadding: EdgeInsets.symmetric(
               vertical: context.knobs.double.slider(
-                  label: 'Content Padding Vertical',
-                  initialValue: 10,
-                  max: 50,
-                  min: 1),
+                label: 'Content Padding Vertical',
+                initialValue: 10,
+                max: 50,
+                min: 1,
+              ),
               horizontal: 20,
             ),
-            floatingLabelBehavior: context.knobs.list(
+            floatingLabelBehavior: context.knobs.object.dropdown(
               label: 'Floating Label Behavior',
               options: <FloatingLabelBehavior>[
                 FloatingLabelBehavior.always,
@@ -93,7 +100,7 @@ Widget defaultUseCase(BuildContext context) {
                 FloatingLabelBehavior.never,
               ],
             ),
-            autovalidateMode: context.knobs.list(
+            autovalidateMode: context.knobs.object.dropdown(
               label: 'Auto validate Mode',
               options: <AutovalidateMode>[
                 AutovalidateMode.always,
@@ -102,8 +109,10 @@ Widget defaultUseCase(BuildContext context) {
               ],
               initialOption: AutovalidateMode.disabled,
             ),
-            hintText: context.knobs
-                .string(label: 'Hint Text', initialValue: 'Input here'),
+            hintText: context.knobs.string(
+              label: 'Hint Text',
+              initialValue: 'Input here',
+            ),
             prefix: context.knobs.boolean(label: 'Display Suffix Widget')
                 ? const Icon(Icons.search)
                 : null,

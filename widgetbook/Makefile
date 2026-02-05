@@ -55,4 +55,4 @@ compile:
 	fvm flutter clean
 	fvm flutter pub get
 	fvm dart run build_runner build --delete-conflicting-outputs
-	fvm flutter build web --web-renderer canvaskit --release
+	fvm flutter build web --release
