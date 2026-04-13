@@ -114,11 +114,11 @@ Widget defaultUseCase(BuildContext context) {
               initialValue: 'Input here',
             ),
             prefix: context.knobs.boolean(label: 'Display Suffix Widget')
-                ? const Icon(Icons.search)
-                : null,
+              ? const Icon(Icons.search, semanticLabel: 'Search')
+              : null,
             suffix: context.knobs.boolean(label: 'Display Prefix Widget')
-                ? const Icon(Icons.date_range)
-                : null,
+              ? const Icon(Icons.date_range, semanticLabel: 'Date')
+              : null,
           ),
         ),
       ),

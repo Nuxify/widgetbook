@@ -24,7 +24,7 @@ Widget defaultUseCase(BuildContext context) {
                 : null,
         trailing:
             context.knobs.boolean(label: 'Display Trailing', initialValue: true)
-                ? const Icon(Icons.add)
+                ? const Icon(Icons.add, semanticLabel: 'Add')
                 : null,
         title: context.knobs.boolean(
           label: 'Display Title',
@@ -52,6 +52,7 @@ Widget defaultUseCase(BuildContext context) {
                     ),
                     const Icon(
                       Icons.favorite,
+                      semanticLabel: 'Favorite',
                       size: 40.0,
                       color: Colors.red,
                     ),
@@ -67,6 +68,7 @@ Widget defaultUseCase(BuildContext context) {
                     ),
                     const Icon(
                       Icons.star,
+                      semanticLabel: 'Star',
                       size: 30.0,
                       color: Colors.yellow,
                     ),
@@ -82,6 +84,7 @@ Widget defaultUseCase(BuildContext context) {
                     ),
                     const Icon(
                       Icons.thumb_up,
+                      semanticLabel: 'Thumb up',
                       size: 50.0,
                       color: Colors.blue,
                     ),

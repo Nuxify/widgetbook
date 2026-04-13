@@ -18,6 +18,7 @@ class ChipIndicator extends StatelessWidget {
     this.backgroundColor,
     this.padding = const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
     this.borderColor,
+    this.semanticLabel,
     super.key,
   });
   final Widget child;
@@ -25,22 +26,27 @@ class ChipIndicator extends StatelessWidget {
   final Color? backgroundColor;
   final EdgeInsetsGeometry padding;
   final Color? borderColor;
+  final String? semanticLabel;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(20),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 100),
-        decoration: BoxDecoration(
-          color: backgroundColor ??
-              Theme.of(context).primaryColor.withValues(alpha: 0.1),
-          border: borderColor != null ? Border.all(color: borderColor!) : null,
-          borderRadius: BorderRadius.circular(20),
+    return Semantics(
+      label: semanticLabel,
+      button: onTap != null,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(20),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 100),
+          decoration: BoxDecoration(
+            color: backgroundColor ??
+                Theme.of(context).primaryColor.withValues(alpha: 0.1),
+            border: borderColor != null ? Border.all(color: borderColor!) : null,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          padding: padding,
+          child: child,
         ),
-        padding: padding,
-        child: child,
       ),
     );
   }

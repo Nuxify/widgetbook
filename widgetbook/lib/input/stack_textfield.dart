@@ -38,13 +38,13 @@ class __StackTextFieldState extends State<_StackTextField> {
         max: 10,
         min: 1,
       ),
-      suffixIcon: context.knobs
-              .boolean(label: 'Display Suffix Icon', initialValue: false)
-          ? const Icon(Icons.search)
+        suffixIcon: context.knobs
+            .boolean(label: 'Display Suffix Icon', initialValue: false)
+          ? const Icon(Icons.search, semanticLabel: 'Search')
           : null,
-      prefixIcon: context.knobs
-              .boolean(label: 'Display Prefix Icon', initialValue: false)
-          ? const Icon(Icons.person)
+        prefixIcon: context.knobs
+            .boolean(label: 'Display Prefix Icon', initialValue: false)
+          ? const Icon(Icons.person, semanticLabel: 'User')
           : null,
       isDense: context.knobs.boolean(label: 'Is Dense', initialValue: false),
       labelColor:
