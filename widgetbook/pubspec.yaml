@@ -1,7 +1,7 @@
 name: widgetbook_workspace
 description: "A new Flutter project."
 publish_to: "none"
-version: 1.7.6
+version: 1.7.7
 
 environment:
   sdk: ^3.10.7
