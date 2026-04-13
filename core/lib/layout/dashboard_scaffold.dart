@@ -45,6 +45,7 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   ),
                   icon: Icon(
                     Icons.home,
+                    semanticLabel: 'Home',
                     size: 20,
                     color: activeIndex == 0 ? activeColor : inactiveColor,
                   ),
@@ -64,6 +65,7 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   ),
                   icon: Icon(
                     Icons.chat,
+                    semanticLabel: 'Chats',
                     size: 20,
                     color: activeIndex == 1 ? activeColor : inactiveColor,
                   ),
@@ -83,6 +85,7 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   ),
                   icon: Icon(
                     Icons.golf_course_sharp,
+                    semanticLabel: 'Rewards',
                     size: 20,
                     color: activeIndex == 2 ? activeColor : inactiveColor,
                   ),
@@ -102,6 +105,7 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   ),
                   icon: Icon(
                     Icons.shopping_basket,
+                    semanticLabel: 'Cart',
                     size: 20,
                     color: activeIndex == 3 ? activeColor : inactiveColor,
                   ),
@@ -121,6 +125,7 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   ),
                   icon: Icon(
                     Icons.person_4_rounded,
+                    semanticLabel: 'Profile',
                     size: 20,
                     color: activeIndex == 4 ? activeColor : inactiveColor,
                   ),
@@ -140,6 +145,7 @@ class _DashboardScaffoldState extends State<DashboardScaffold> {
                   ),
                   icon: Icon(
                     Icons.menu,
+                    semanticLabel: 'Menu',
                     size: 20,
                     color: activeIndex == 5 ? activeColor : inactiveColor,
                   ),

@@ -48,6 +48,7 @@ Widget defaultUseCase(BuildContext context) {
                         .boolean(label: 'Show Logo', initialValue: true)
                     ? Icon(
                         Icons.ac_unit_outlined,
+                        semanticLabel: 'Logo',
                         color: context.knobs.color(
                           label: 'Logo Color',
                         ),

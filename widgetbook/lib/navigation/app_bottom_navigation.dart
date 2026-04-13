@@ -66,6 +66,7 @@ class __BottomNavigationState extends State<_BottomNavigation> {
                   ),
                   icon: Icon(
                     Icons.home,
+                    semanticLabel: 'Home',
                     size: iconSize,
                     color: activeIndex == 0 ? activeColor : inactiveColor,
                   ),
@@ -85,6 +86,7 @@ class __BottomNavigationState extends State<_BottomNavigation> {
                   ),
                   icon: Icon(
                     Icons.chat,
+                    semanticLabel: 'Chats',
                     size: iconSize,
                     color: activeIndex == 1 ? activeColor : inactiveColor,
                   ),
@@ -104,6 +106,7 @@ class __BottomNavigationState extends State<_BottomNavigation> {
                   ),
                   icon: Icon(
                     Icons.golf_course_sharp,
+                    semanticLabel: 'Rewards',
                     size: iconSize,
                     color: activeIndex == 2 ? activeColor : inactiveColor,
                   ),
@@ -123,6 +126,7 @@ class __BottomNavigationState extends State<_BottomNavigation> {
                   ),
                   icon: Icon(
                     Icons.shopping_basket,
+                    semanticLabel: 'Cart',
                     size: iconSize,
                     color: activeIndex == 3 ? activeColor : inactiveColor,
                   ),
@@ -142,6 +146,7 @@ class __BottomNavigationState extends State<_BottomNavigation> {
                   ),
                   icon: Icon(
                     Icons.person_4_rounded,
+                    semanticLabel: 'Profile',
                     size: iconSize,
                     color: activeIndex == 4 ? activeColor : inactiveColor,
                   ),
@@ -161,6 +166,7 @@ class __BottomNavigationState extends State<_BottomNavigation> {
                   ),
                   icon: Icon(
                     Icons.menu,
+                    semanticLabel: 'Menu',
                     size: iconSize,
                     color: activeIndex == 5 ? activeColor : inactiveColor,
                   ),

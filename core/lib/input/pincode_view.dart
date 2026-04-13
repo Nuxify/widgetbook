@@ -162,32 +162,40 @@ class _Keypad extends StatelessWidget {
                   else if (keypadMatrix[i][j] == '-1')
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 17),
-                      child: IconButton(
-                        onPressed: backspace,
-                        icon: Icon(
-                          Icons.backspace_outlined,
-                          size: textStyle?.fontSize ?? 30,
-                          color: textStyle?.color ?? Colors.black,
+                      child: Semantics(
+                        button: true,
+                        label: 'Backspace',
+                        child: IconButton(
+                          onPressed: backspace,
+                          icon: Icon(
+                            Icons.backspace_outlined,
+                            size: textStyle?.fontSize ?? 30,
+                            color: textStyle?.color ?? Colors.black,
+                          ),
                         ),
                       ),
                     )
                   else
                     Material(
                       color: Theme.of(context).colorScheme.surface,
-                      child: InkWell(
-                        onTap: () => input(keypadMatrix[i][j]),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 40,
-                            vertical: 5,
-                          ),
-                          child: Text(
-                            keypadMatrix[i][j],
-                            style: textStyle ??
-                                Theme.of(context)
-                                    .textTheme
-                                    .displaySmall
-                                    ?.copyWith(color: Colors.black),
+                      child: Semantics(
+                        button: true,
+                        label: 'Number ${keypadMatrix[i][j]}',
+                        child: InkWell(
+                          onTap: () => input(keypadMatrix[i][j]),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 40,
+                              vertical: 5,
+                            ),
+                            child: Text(
+                              keypadMatrix[i][j],
+                              style: textStyle ??
+                                  Theme.of(context)
+                                      .textTheme
+                                      .displaySmall
+                                      ?.copyWith(color: Colors.black),
+                            ),
                           ),
                         ),
                       ),

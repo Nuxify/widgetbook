@@ -15,6 +15,7 @@ Widget defaultUseCase(BuildContext context) {
       ),
       graphic: Icon(
         Icons.broken_image,
+        semanticLabel: 'Empty graphic',
         color: context.knobs.color(label: 'Graphic Color'),
         size: context.knobs.double.slider(
           label: 'Graphic size',

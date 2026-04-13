@@ -81,7 +81,10 @@ class AppBottomNavigation extends StatelessWidget {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.only(bottom: 3),
-                        child: items[i].icon,
+                        child: Semantics(
+                          label: items[i].semanticLabel,
+                          child: items[i].icon,
+                        ),
                       ),
                       FittedBox(
                         fit: BoxFit.scaleDown,
@@ -104,9 +107,11 @@ class BottomNavigationItem {
     required this.onTap,
     required this.label,
     required this.icon,
+    this.semanticLabel,
   });
 
   final VoidCallback onTap;
   final Widget label;
   final Widget icon;
+  final String? semanticLabel;
 }
